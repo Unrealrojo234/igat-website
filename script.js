@@ -1,5 +1,29 @@
-// Initialize Bootstrap components
 document.addEventListener('DOMContentLoaded', function() {
+    // ==================== NEW NAVBAR SCROLL BEHAVIOR ====================
+    const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+    const scrolledUpClass = 'scrolled-up';
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down - remove white background
+            navbar.classList.remove(scrolledUpClass);
+        } else {
+            // Scrolling up - add white background if scrolled past 100px
+            if (scrollTop > 100) {
+                navbar.classList.add(scrolledUpClass);
+            } else {
+                // At top of page - remove white background
+                navbar.classList.remove(scrolledUpClass);
+            }
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // ==================== EXISTING CODE (maintained) ====================
     // Initialize tooltips
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {

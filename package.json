@@ -1,0 +1,28 @@
+{
+  "name": "kisii-poly-igat-club",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasper-nyambichu/igat-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasper-nyambichu/igat-website/issues"
+  },
+  "homepage": "https://github.com/jasper-nyambichu/igat-website#readme",
+  "description": "",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.5"
+  },
+  "devDependencies": {
+    "webpack": "^5.99.5",
+    "webpack-cli": "^6.0.1"
+  }
+}

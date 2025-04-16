@@ -1,12 +1,22 @@
 /* Color Variables */
 :root {
-    --primary-color: #4CAF50; /* Light green */
+    /* Your existing variables */
+    --primary-color: #4CAF50;       /* Light green */
     --primary-dark: #388E3C;
     --primary-light: #C8E6C9;
-    --light-color: #f5f5f5; /* Less bright light color */
-    --dark-color: #333;
-    --text-color: #333;
+    --light-color: #f5f5f5;         /* Less bright light color */
+    --dark-color: #3333;
+    --text-color: #3333;
     --text-light: #777;
+    
+    /* New variables needed for navbar scroll behavior */
+    --primary-color-rgb: 76, 175, 80;  /* RGB equivalent of #4CAF50 */
+    
+    /* Optional: You might want to add these for better color control */
+    --navbar-scroll-bg: rgba(255, 255, 255, 0.95); /* White background when scrolled */
+    --navbar-scroll-text: var(--primary-color);     /* Green text when navbar is white */
+    --navbar-scroll-hover: var(--primary-dark);     /* Dark green for hover states */
+    --navbar-scroll-active-bg: rgba(76, 175, 80, 0.1); /* Semi-transparent green for active links */
 }
 
 /* General Styles */
@@ -17,14 +27,37 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Navbar Styles */
 .navbar {
-    background-color: var(--primary-color) !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1.2rem 0; /* Increased from typical 0.5rem-1rem */
+    background-color: rgba(76, 175, 80, 0.7) !important; /* 70% opacity green */
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease-in-out;
 }
 
+/* Keep all other existing navbar styles exactly the same */
+.navbar.scrolled-up {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    /* Rest of your scrolled-up styles remain unchanged */
+}
+
+/* All your other existing navbar CSS rules stay exactly the same */
+.navbar.scrolled-up .nav-link {
+    color: var(--navbar-scroll-text) !important;
+}
+
+.navbar.scrolled-up .nav-link:hover,
+.navbar.scrolled-up .nav-link:focus {
+    color: var(--navbar-scroll-hover) !important;
+}
+
+.navbar.scrolled-up .nav-link.active {
+    background-color: var(--navbar-scroll-active-bg);
+}
+
+/* The rest of your existing navbar styles remain the same */
 .navbar-brand {
-    font-weight: 600;
+    padding: 0.3rem 0; /* Added vertical padding */
+    margin-right: 1.5rem; /* Increased from your current 10px */
 }
 
 .navbar-brand img {
@@ -34,7 +67,8 @@ body {
 .nav-link {
     color: white !important;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.2rem !important; /* Increased from 0.5rem 1rem */
+    margin: 0 0.2rem; /* Added slight horizontal spacing */
     transition: all 0.3s ease;
 }
 
@@ -46,6 +80,37 @@ body {
     font-weight: 600;
     background-color: rgba(255,255,255,0.1);
     border-radius: 4px;
+}
+
+/* Mobile menu styles (maintained) */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Dropdown menu styles (maintained) */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 0.8rem; /* Matches new padding */
+}
+
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+}
+.navbar {
+    background-color: var(--primary-color); /* Fallback */
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .navbar {
+        background-color: rgba(var(--primary-color-rgb), 0.9);
+        backdrop-filter: blur(10px);
+    }
 }
 
 /* Offcanvas Navbar for Mobile */
@@ -61,6 +126,7 @@ body {
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
         z-index: 1050;
+        padding-top: 1rem; /* Added space for mobile menu */
     }
 
     .navbar-collapse.show {
