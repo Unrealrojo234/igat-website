@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Showcase - IGAT Club</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="IGAT Logo" height="50">
+                IGAT Club
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="offcanvas-header d-lg-none">
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="programs.html">Programs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="impact.html">Impact</a></li>
+                            <li><a class="dropdown-item" href="showcase.html">Showcase</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="showcase-header">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="fw-bold text-white">Talent Showcase</h1>
+                    <p class="lead text-white">Celebrating the creativity and innovation of our students</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Filters -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold text-primary mb-4">Explore Our Gallery</h2>
+                    <p>Browse through outstanding talents and innovations from our students</p>
+                    <div class="filter-buttons mt-4">
+                        <button class="btn btn-outline-primary active" data-filter="all">All</button>
+                        <button class="btn btn-outline-primary" data-filter="music">Music</button>
+                        <button class="btn btn-outline-primary" data-filter="art">Visual Arts</button>
+                        <button class="btn btn-outline-primary" data-filter="tech">Technology</button>
+                        <button class="btn btn-outline-primary" data-filter="performance">Performance</button>
+                        <button class="btn btn-outline-primary" data-filter="other">Other</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 gallery-grid">
+                <!-- Music -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="music">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-img-top position-relative">
+                            <img src="images/showcase1.jpg" class="img-fluid w-100" alt="Music Performance">
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-2">Music</div>
+                            <a href="images/showcase1.jpg" class="gallery-preview" data-fslightbox="gallery" data-caption="Vocal performance at KNP Talent Day 2023">
+                                <div class="preview-overlay">
+                                    <i class="fas fa-search-plus fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Vocal Performance</h5>
+                            <p class="card-text">Sarah's award-winning performance at KNP Talent Day 2023 that earned her a recording contract.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#videoModal1">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="tech">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-img-top position-relative">
+                            <img src="images/showcase2.jpg" class="img-fluid w-100" alt="Tech Innovation">
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-2">Technology</div>
+                            <a href="images/showcase2.jpg" class="gallery-preview" data-fslightbox="gallery" data-caption="Inventory management app developed by James">
+                                <div class="preview-overlay">
+                                    <i class="fas fa-search-plus fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Inventory Management App</h5>
+                            <p class="card-text">James developed this app to help small businesses track stock, now used by 50+ businesses.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="art">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-img-top position-relative">
+                            <img src="images/showcase3.jpg" class="img-fluid w-100" alt="Artwork">
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-2">Visual Arts</div>
+                            <a href="images/showcase3.jpg" class="gallery-preview" data-fslightbox="gallery" data-caption="Grace's painting that earned her an art scholarship to Italy">
+                                <div class="preview-overlay">
+                                    <i class="fas fa-search-plus fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">"The Market Scene" Painting</h5>
+                            <p class="card-text">Grace's acrylic painting that caught the attention of an Italian art professor.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Artist Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="performance">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-img-top position-relative">
+                            <img src="images/showcase4.jpg" class="img-fluid w-100" alt="Dance Performance">
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-2">Performance</div>
+                            <a href="images/showcase4.jpg" class="gallery-preview" data-fslightbox="gallery" data-caption="Traditional dance group performance at National Talent Festival">
+                                <div class="preview-overlay">
+                                    <i class="fas fa-search-plus fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Traditional Dance</h5>
+                            <p class="card-text">Our dance group's award-winning performance at the National Talent Festival.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#videoModal2">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="tech">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-img-top position-relative">
+                            <img src="images/showcase5.jpg" class="img-fluid w-100" alt="Robotics Project">
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-2">Technology</div>
+                            <a href="images/showcase5.jpg" class="gallery-preview" data-fslightbox="gallery" data-caption="Automated irrigation system developed by engineering students">
+                                <div class="preview-overlay">
+                                    <i class="fas fa-search-plus fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Automated Irrigation System</h5>
+                            <p class="card-text">Smart farming solution developed by engineering students for small-scale farmers.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other -->
+                <div class="col-md-6 col-lg-4 gallery-item" data-category="other">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-img-top position-relative">
+                            <img src="images/showcase6.jpg" class="img-fluid w-100" alt="Fashion Design">
+                            <div class="badge bg-primary position-absolute top-0 end-0 m-2">Other</div>
+                            <a href="images/showcase6.jpg" class="gallery-preview" data-fslightbox="gallery" data-caption="Eco-friendly fashion collection by fashion design students">
+                                <div class="preview-overlay">
+                                    <i class="fas fa-search-plus fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Eco-Friendly Fashion</h5>
+                            <p class="card-text">Sustainable fashion collection made from recycled materials by fashion design students.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Designer Profiles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary">View More Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Talents -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold">Featured Talents</h2>
+                    <p class="lead">Spotlight on exceptional students discovered through IGAT Club</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 bg-transparent">
+                        <img src="images/talent1.jpg" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;" alt="Featured Talent">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Sarah M.</h4>
+                            <p class="text-muted">Music</p>
+                            <p class="card-text">Won Kenya's Got Talent after being discovered at KNP Talent Day. Now a recording artist with two singles.</p>
+                            <a href="#" class="btn btn-light">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 bg-transparent">
+                        <img src="images/talent2.jpg" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;" alt="Featured Talent">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">James K.</h4>
+                            <p class="text-muted">Technology</p>
+                            <p class="card-text">Developed inventory management app that's now used by 50+ businesses. Runs his own startup.</p>
+                            <a href="#" class="btn btn-light">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 bg-transparent">
+                        <img src="images/talent3.jpg" class="card-img-top rounded-circle mx-auto" style="width: 150px; height: 150px; object-fit: cover;" alt="Featured Talent">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Grace W.</h4>
+                            <p class="text-muted">Visual Arts</p>
+                            <p class="card-text">Earned full scholarship to Italy for her paintings. Currently studying fine art in Florence.</p>
+                            <a href="#" class="btn btn-light">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold text-primary">What Our Talents Say</h2>
+                    <p class="lead">Hear from students who've benefited from IGAT Club</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="showcaseTestimonials" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-item text-center p-4">
+                                    <img src="images/testimonial4.jpg" class="rounded-circle mb-3" width="100" alt="Testimonial">
+                                    <blockquote class="blockquote">
+                                        <p>"IGAT Club gave me the confidence to pursue music professionally. The workshops and performance opportunities were invaluable."</p>
+                                    </blockquote>
+                                    <h5>Michael N.</h5>
+                                    <p>Music Talent, Class of 2022</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center p-4">
+                                    <img src="images/testimonial5.jpg" class="rounded-circle mb-3" width="100" alt="Testimonial">
+                                    <blockquote class="blockquote">
+                                        <p>"Through IGAT's tech challenges, I discovered my passion for coding and now have a promising career in software development."</p>
+                                    </blockquote>
+                                    <h5>Linda O.</h5>
+                                    <p>Tech Innovation, Class of 2021</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center p-4">
+                                    <img src="images/testimonial6.jpg" class="rounded-circle mb-3" width="100" alt="Testimonial">
+                                    <blockquote class="blockquote">
+                                        <p>"The art exhibition organized by IGAT led to my first commission. I now run a successful graphic design business."</p>
+                                    </blockquote>
+                                    <h5>David M.</h5>
+                                    <p>Visual Arts, Class of 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#showcaseTestimonials" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#showcaseTestimonials" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Showcase Your Talent?</h2>
+            <p class="lead mb-4">Join IGAT Club and get opportunities to demonstrate your unique abilities</p>
+            <a href="contact.html" class="btn btn-primary btn-lg me-2">Contact Us</a>
+            <a href="programs.html" class="btn btn-outline-primary btn-lg">View Programs</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About IGAT Club</h5>
+                    <p>Identifying and nurturing talents among students at Kisii National Polytechnic since 2018.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="programs.html" class="text-white">Programs</a></li>
+                        <li><a href="news.html" class="text-white">News</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Kisii National Polytechnic</li>
+                        <li><i class="fas fa-phone me-2"></i> 0722 995 763</li>
+                        <li><i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to our newsletter for updates</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 IGAT Club. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modals -->
+    <div class="modal fade" id="videoModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sarah's Vocal Performance</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/example1" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="videoModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Traditional Dance Performance</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/example2" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        // Gallery filtering
+        document.querySelectorAll('.filter-buttons button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                document.querySelector('.filter-buttons button.active').classList.remove('active');
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const items = document.querySelectorAll('.gallery-item');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
