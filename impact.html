@@ -10,63 +10,212 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --primary-light: #C8E6C9;
+            
+            /* Text Colors */
+            --text-dark: #2c3e50;
+            --text-medium: #555;
+            --text-light: #f8f9fa;
+            
+            /* Spacing */
+            --section-padding: 5rem 0;
+            --section-padding-md: 4rem 0;
+            --section-padding-sm: 3rem 0;
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(76, 175, 80, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        /* Header/Hero Sections */
+        .page-header {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: var(--section-padding);
+            margin-top: 80px;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .page-header .lead {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: var(--section-padding);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+        
+        /* Cards */
+        .custom-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            :root {
+                --section-padding: var(--section-padding-md);
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+            
+            .page-header .lead {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: var(--section-padding-sm);
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header .lead {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header .lead {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="IGAT Logo" height="50">
-                IGAT Club
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="offcanvas-header d-lg-none">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="programs.html">Programs</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            More
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="impact.html">Impact</a></li>
-                            <li><a class="dropdown-item" href="showcase.html">Showcase</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar">
+        <div class="brand">
+            <img src="https://via.placeholder.com/40x40" alt="Logo" class="brand-logo">
+            <a href="#" class="brand-name">IGAT Club</a>
         </div>
+        
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
+          ☰
+        </button>
+        
+        <div class="nav-overlay"></div>
+        
+        <ul class="nav-list" id="nav-list" aria-hidden="true">
+            <button class="menu-close" aria-label="Close menu">×</button>
+            <li class="nav-item active"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="about.html">About Us</a></li>
+            <li class="nav-item"><a href="programs.html">Programs</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+                <div class="dropdown-content">
+                    <a href="impact.html">Impact</a>
+                    <a href="showcase.html">Showcase</a>
+                    <a href="news.html">News</a>
+                    <a href="support.html">Support</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
     <!-- Page Header -->
-    <header class="impact-header">
+    <header class="impact-header page-header"  style="background-image: url('images/IMG-20250407-WA0443.jpg');">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 text-center">
-                    <h1 class="fw-bold text-white">Our Impact</h1>
-                    <p class="lead text-white">Transforming lives through talent development</p>
+                    <h1 class="display-3 fw-bold mb-4">Our Impact</h1>
+                    <p class="lead mb-5">Transforming lives through talent development</p>
+                    <a href="#our-impact" class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-arrow-down me-2"></i>Our Impact
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Stats Section -->
-    <section class="py-5 bg-light">
+    <section class="content-section" id="our-impact">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
@@ -74,7 +223,7 @@
                     <p class="lead">Quantifying our contribution to talent development</p>
                 </div>
             </div>
-            <div class="row text-center">
+            <div class="row justify-content-center">
                 <div class="col-md-3 mb-4">
                     <div class="counter-box p-4 rounded shadow-sm">
                         <i class="fas fa-users fa-3x text-primary mb-3"></i>
@@ -108,7 +257,7 @@
     </section>
 
     <!-- Success Stories -->
-    <section class="py-5">
+    <section class="py-5 content-section bg-light content-section">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
@@ -118,7 +267,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
+                    <div class="card h-100 border-0 shadow-sm custom-card card">
                         <img src="images/success1.jpg" class="card-img-top" alt="Success Story">
                         <div class="card-body">
                             <h4 class="card-title">From Campus to National Stage</h4>
@@ -128,7 +277,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
+                    <div class="card h-100 border-0 shadow-sm custom-card card">
                         <img src="images/success2.jpg" class="card-img-top" alt="Success Story">
                         <div class="card-body">
                             <h4 class="card-title">App Developer at 20</h4>
@@ -138,7 +287,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
+                    <div class="card h-100 border-0 shadow-sm custom-card card">
                         <img src="images/success3.jpg" class="card-img-top" alt="Success Story">
                         <div class="card-body">
                             <h4 class="card-title">Art Scholarship to Italy</h4>
@@ -156,59 +305,160 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="fw-bold">What People Say About Us</h2>
-                    <p class="lead">Testimonials from students, partners, and supporters</p>
+                    <h2 class="fw-bold mb-3">What People Say About Us</h2>
+                    <p class="lead opacity-75">Testimonials from students, partners, and supporters</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-10 mx-auto">
                     <div id="impactTestimonials" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
+                            <!-- Testimonial 1 -->
                             <div class="carousel-item active">
-                                <div class="testimonial-item text-center p-4">
-                                    <img src="images/testimonial1.jpg" class="rounded-circle mb-3" width="100" alt="Testimonial">
-                                    <blockquote class="blockquote">
-                                        <p>"IGAT Club gave me the confidence to pursue my passion for music. Without their platform, I would never have discovered my potential."</p>
+                                <div class="testimonial-card bg-white text-dark p-4 p-lg-5 rounded-4 shadow-lg mx-auto">
+                                    <div class="testimonial-img-container position-relative mb-4">
+                                        <img src="images/images (1).jpg" class="rounded-circle shadow" width="120" alt="Testimonial">
+                                        <div class="quote-icon bg-primary text-white">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                    </div>
+                                    <blockquote class="blockquote mb-4 px-lg-4">
+                                        <p class="fs-5">"IGAT Club gave me the confidence to pursue my passion for music. Without their platform, I would never have discovered my potential."</p>
                                     </blockquote>
-                                    <h5>Sarah M.</h5>
-                                    <p>Music Talent, Class of 2021</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1 text-primary">Sarah M.</h5>
+                                        <p class="text-muted">Music Talent, Class of 2021</p>
+                                    </div>
                                 </div>
                             </div>
+                            
+                            <!-- Testimonial 2 -->
                             <div class="carousel-item">
-                                <div class="testimonial-item text-center p-4">
-                                    <img src="images/testimonial2.jpg" class="rounded-circle mb-3" width="100" alt="Testimonial">
-                                    <blockquote class="blockquote">
-                                        <p>"As an employer, I'm always impressed by IGAT participants. They demonstrate creativity and problem-solving skills beyond their academic training."</p>
+                                <div class="testimonial-card bg-white text-dark p-4 p-lg-5 rounded-4 shadow-lg mx-auto">
+                                    <div class="testimonial-img-container position-relative mb-4">
+                                        <img src="images/images (2).jpg" class="rounded-circle shadow" width="120" alt="Testimonial">
+                                        <div class="quote-icon bg-primary text-white">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                    </div>
+                                    <blockquote class="blockquote mb-4 px-lg-4">
+                                        <p class="fs-5">"As an employer, I'm always impressed by IGAT participants. They demonstrate creativity and problem-solving skills beyond their academic training."</p>
                                     </blockquote>
-                                    <h5>David K.</h5>
-                                    <p>Tech Company CEO</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1 text-primary">David K.</h5>
+                                        <p class="text-muted">Tech Company CEO</p>
+                                    </div>
                                 </div>
                             </div>
+                            
+                            <!-- Testimonial 3 -->
                             <div class="carousel-item">
-                                <div class="testimonial-item text-center p-4">
-                                    <img src="images/testimonial3.jpg" class="rounded-circle mb-3" width="100" alt="Testimonial">
-                                    <blockquote class="blockquote">
-                                        <p>"The talent development workshops helped me refine my artistic skills, leading to my first paid commission while still in school."</p>
+                                <div class="testimonial-card bg-white text-dark p-4 p-lg-5 rounded-4 shadow-lg mx-auto">
+                                    <div class="testimonial-img-container position-relative mb-4">
+                                        <img src="images/images (3).jpg" class="rounded-circle shadow" width="120" alt="Testimonial">
+                                        <div class="quote-icon bg-primary text-white">
+                                            <i class="fas fa-quote-left"></i>
+                                        </div>
+                                    </div>
+                                    <blockquote class="blockquote mb-4 px-lg-4">
+                                        <p class="fs-5">"The talent development workshops helped me refine my artistic skills, leading to my first paid commission while still in school."</p>
                                     </blockquote>
-                                    <h5>Grace W.</h5>
-                                    <p>Visual Artist, Class of 2022</p>
+                                    <div class="testimonial-author">
+                                        <h5 class="mb-1 text-primary">Grace W.</h5>
+                                        <p class="text-muted">Visual Artist, Class of 2022</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#impactTestimonials" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon bg-white text-primary rounded-circle p-2" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#impactTestimonials" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon bg-white text-primary rounded-circle p-2" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <style>
+        /* Testimonial Card Styling */
+        .testimonial-card {
+            max-width: 800px;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        }
+        
+        .testimonial-img-container {
+            display: inline-block;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(13,110,253,0.3);
+        }
+        
+        /* Carousel Controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: auto;
+            opacity: 1;
+        }
+        
+        .carousel-control-prev {
+            left: -50px;
+        }
+        
+        .carousel-control-next {
+            right: -50px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .carousel-control-prev {
+                left: -30px;
+            }
+            
+            .carousel-control-next {
+                right: -30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 2rem !important;
+            }
+            
+            .testimonial-img-container img {
+                width: 100px !important;
+            }
+            
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+            }
+        }
+    </style>
 
     <!-- Milestones Timeline -->
-    <section class="py-5">
+    <section class="py-5 content-section">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
@@ -268,7 +518,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light content-section">
         <div class="container text-center">
             <h2 class="mb-4">Be Part of Our Success Story</h2>
             <p class="lead mb-4">Support our mission to identify and nurture talents among students</p>

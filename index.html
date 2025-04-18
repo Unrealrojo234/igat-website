@@ -1,290 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IGAT Club - Kisii National Polytechnic</title>
     <!-- Bootstrap CSS -->
-    <link
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+     <link rel="stylesheet" href="style.css">
+     <style>
+      :root {
+          /* Primary Colors */
+          --primary-color: #4CAF50;
+          --primary-dark: #388E3C;
+          --primary-light: #C8E6C9;
+          
+          /* Text Colors */
+          --text-dark: #2c3e50;
+          --text-medium: #555;
+          --text-light: #f8f9fa;
+          
+          /* Spacing */
+          --section-padding: 5rem 0;
+          --section-padding-md: 4rem 0;
+          --section-padding-sm: 3rem 0;
+      }
+      
+      /* Base Styles */
+      body {
+          font-family: 'Poppins', sans-serif;
+          color: var(--text-medium);
+          line-height: 1.7;
+          overflow-x: hidden;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+          font-weight: 700;
+          color: var(--text-dark);
+      }
+      
+      /* Navbar Styles */
+      .navbar {
+          background-color: rgba(76, 175, 80, 0.9);
+          backdrop-filter: blur(10px);
+          padding: 1rem 2rem;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1030;
+          transition: all 0.3s ease;
+      }
+      
+      .brand-name {
+          font-weight: 700;
+          font-size: 1.3rem;
+          color: white;
+      }
+      
+      /* Hero Section */
+      .hero-section {
+          background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url('images/IMG-20250407-WA0451.jpg');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          color: white;
+          padding: var(--section-padding);
+          margin-top: 80px;
+          min-height: 90vh;
+          display: flex;
+          align-items: center;
+      }
+      
+      .hero-section h1 {
+          font-size: 3.5rem;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          margin-bottom: 1.5rem;
+      }
+      
+      .hero-section .lead {
+          font-size: 1.5rem;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+          margin-bottom: 2rem;
+      }
+      
+      /* Content Sections */
+      .content-section {
+          padding: var(--section-padding);
+      }
+      
+      .section-title {
+          position: relative;
+          padding-bottom: 1rem;
+          margin-bottom: 3rem;
+          text-align: center;
+      }
+      
+      .section-title::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 4px;
+          background: var(--primary-color);
+      }
+      
+      /* Programs Carousel */
+      .programs-carousel .carousel-item {
+          padding: 2rem;
+      }
+      
+      .program-card {
+          border: none;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          height: 100%;
+      }
+      
+      .program-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+      
+      .program-card .card-img-top {
+          height: 200px;
+          object-fit: cover;
+      }
+      
+      .program-card .card-body {
+          padding: 1.5rem;
+      }
+      
+      .carousel-control-prev, 
+      .carousel-control-next {
+          width: 5%;
+      }
+      
+      /* Impact Stats */
+      .impact-section {
+          background-color: var(--primary-color);
+          color: white;
+      }
+      
+      .stat-number {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+      }
+      
+      /* Testimonials */
+      .testimonial-card {
+          background: white;
+          border-radius: 10px;
+          padding: 2rem;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .testimonial-img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border: 5px solid var(--primary-light);
+      }
+      
+      /* Call to Action */
+      .cta-section {
+          background-color: var(--light-color);
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+          :root {
+              --section-padding: var(--section-padding-md);
+          }
+          
+          .hero-section h1 {
+              font-size: 3rem;
+          }
+          
+          .hero-section .lead {
+              font-size: 1.3rem;
+          }
+      }
+      
+      @media (max-width: 768px) {
+          :root {
+              --section-padding: var(--section-padding-sm);
+          }
+          
+          .hero-section {
+              background-attachment: scroll;
+              min-height: auto;
+          }
+          
+          .hero-section h1 {
+              font-size: 2.5rem;
+          }
+          
+          .hero-section .lead {
+              font-size: 1.2rem;
+          }
+          
+          .programs-carousel .carousel-item {
+              padding: 1rem;
+          }
+      }
+      
+      @media (max-width: 576px) {
+          .hero-section h1 {
+              font-size: 2rem;
+          }
+          
+          .hero-section .lead {
+              font-size: 1.1rem;
+          }
+          
+          .stat-number {
+              font-size: 2.5rem;
+          }
+      }
+  </style>
+</head>
+<body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/logo.png" alt="IGAT Logo" height="50" />
-          IGAT Club
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="offcanvas-header d-lg-none">
-            <button
-              type="button"
-              class="btn-close text-reset"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="programs.html">Programs</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="moreDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                More
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                <li><a class="dropdown-item" href="impact.html">Impact</a></li>
-                <li>
-                  <a class="dropdown-item" href="showcase.html">Showcase</a>
-                </li>
-                <li><a class="dropdown-item" href="news.html">News</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
+    <nav class="navbar">
+      <div class="brand">
+          <img src="https://via.placeholder.com/40x40" alt="Logo" class="brand-logo">
+          <a href="#" class="brand-name">IGAT Club</a>
       </div>
+      
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
+        ☰
+      </button>
+      
+      <div class="nav-overlay"></div>
+      
+      <ul class="nav-list" id="nav-list" aria-hidden="true">
+          <button class="menu-close" aria-label="Close menu">×</button>
+          <li class="nav-item active"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="programs.html">Programs</a></li>
+          <li class="nav-item dropdown">
+              <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+              <div class="dropdown-content">
+                  <a href="impact.html">Impact</a>
+                  <a href="showcase.html">Showcase</a>
+                  <a href="news.html">News</a>
+                  <a href="support.html">Support</a>
+                  <a href="faq.html">FAQ</a>
+              </div>
+          </li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero-section">
-      <div class="container text-center text-white">
-        <h1 class="display-4 fw-bold">Unlocking Potential Through Talent</h1>
-        <p class="lead">Discover, Develop, and Showcase Your Hidden Talents</p>
-        <a href="programs.html" class="btn btn-light btn-lg me-2"
-          >Explore Programs</a
-        >
-        <a href="support.html" class="btn btn-outline-light btn-lg"
-          >Support Us</a
-        >
+      <div class="container text-center">
+        <h1 class="display-3 fw-bold mb-4">Unlocking Potential Through Talent</h1>
+        <p class="lead mb-5">Discover, Develop, and Showcase Your Hidden Talents</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="programs.html" class="btn btn-light btn-lg px-4 py-2">
+                Explore Programs <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+            <a href="support.html" class="btn btn-outline-light btn-lg px-4 py-2">
+                Support Us
+            </a>
+        </div>
       </div>
     </header>
 
     <!-- Mission Statement -->
     <section class="py-5 bg-light">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h2 class="fw-bold text-primary">Our Mission</h2>
-            <p class="lead">
-              To identify, nurture, and develop talents among students at Kisii
-              National Polytechnic, creating future stars and innovators who
-              will transform society.
-            </p>
-            <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+          <div class="row align-items-center g-5">
+              <!-- Text Content -->
+              <div class="col-lg-6 order-lg-1 order-2">
+                  <div class="mission-content pe-lg-5">
+                      <h2 class="display-4 fw-bold text-primary position-relative mb-4">
+                          Our Mission
+                          <span class="title-underline"></span>
+                      </h2>
+                      <p class="lead mb-4 fs-4">
+                          To identify, nurture, and develop talents among students at Kisii National Polytechnic, creating future stars and innovators who will transform society.
+                      </p>
+                      <div class="d-flex flex-wrap gap-3">
+                          <a href="about.html" class="btn btn-primary btn-lg px-4 py-3">
+                              Learn More About Us
+                              <i class="fas fa-arrow-right ms-2"></i>
+                          </a>
+                          <a href="programs.html" class="btn btn-outline-primary btn-lg px-4 py-3">
+                              Our Programs
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              
+              <!-- Image -->
+              <div class="col-lg-6 order-lg-2 order-1">
+                  <div class="mission-image-container position-relative">
+                      <img src="images/IMG-20250407-WA0431.jpg" 
+                           alt="Talent Show" 
+                           class="img-fluid rounded-4 shadow-lg">
+                      <div class="image-overlay"></div>
+                      <div class="image-badge bg-primary text-white p-3 rounded-3 shadow">
+                          <i class="fas fa-star me-2"></i>
+                          <span>Since 2018</span>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="col-lg-6">
-            <img
-              src="images/IMG-20250407-WA0431.jpg"
-              alt="Talent Show"
-              class="img-fluid rounded shadow"
-            />
-          </div>
-        </div>
       </div>
-    </section>
+  </section>
+  
+  <style>
+      /* Mission Section Styling */
+      .mission-content {
+          position: relative;
+      }
+      
+      .title-underline {
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 80px;
+          height: 4px;
+          background: var(--primary-color);
+          border-radius: 2px;
+      }
+      
+      .mission-image-container {
+          position: relative;
+          overflow: hidden;
+          border-radius: 1rem;
+      }
+      
+      .image-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(13,110,253,0.1) 0%, rgba(13,110,253,0.05) 100%);
+      }
+      
+      .image-badge {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          font-weight: 600;
+          font-size: 1.1rem;
+      }
+      
+      .btn-primary, .btn-outline-primary {
+          transition: all 0.3s ease;
+      }
+      
+      .btn-primary:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+      }
+      
+      .btn-outline-primary:hover {
+          background-color: var(--primary-color);
+          color: white;
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+          .mission-content {
+              text-align: center;
+              padding: 0 1rem;
+          }
+          
+          .title-underline {
+              left: 50%;
+              transform: translateX(-50%);
+          }
+          
+          .d-flex {
+              justify-content: center;
+          }
+      }
+      
+      @media (max-width: 768px) {
+          h2 {
+              font-size: 2.5rem !important;
+          }
+          
+          .lead {
+              font-size: 1.25rem !important;
+          }
+      }
+  </style>
 
     <!-- Programs Highlights -->
-    <section class="py-5">
+    <section class="content-section bg-light">
       <div class="container">
-        <h2 class="text-center mb-5">Our Key Programs</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm">
-              <img
-                src="images/IMG-20250407-WA0424.jpg"
-                class="card-img-top"
-                alt="Talent Day"
-              />
-              <div class="card-body">
-                <h5 class="card-title">KNP Talent Day</h5>
-                <p class="card-text">
-                  Semesterly talent competitions where students showcase their
-                  abilities in various categories.
-                </p>
-                <a
-                  href="programs.html#talent-day"
-                  class="btn btn-outline-primary"
-                  >Read More</a
-                >
-              </div>
+        <h2 class="section-title">Our Key Programs</h2>
+        
+        <div id="programsCarousel" class="carousel slide programs-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="program-card card h-100">
+                                <img src="images/IMG-20250407-WA0424.jpg" class="card-img-top" alt="Talent Day">
+                                <div class="card-body">
+                                    <h5 class="card-title">KNP Talent Day</h5>
+                                    <p class="card-text">
+                                        Semesterly talent competitions where students showcase their
+                                        abilities in various categories.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="programs.html#talent-day" class="btn btn-outline-primary">
+                                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="program-card card h-100">
+                                <img src="images/IMG-20250407-WA0425.jpg" class="card-img-top" alt="Workshop">
+                                <div class="card-body">
+                                    <h5 class="card-title">Talent Development Workshops</h5>
+                                    <p class="card-text">
+                                        Regular workshops with industry experts to help students
+                                        refine their talents.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="programs.html#workshops" class="btn btn-outline-primary">
+                                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="program-card card h-100">
+                                <img src="images/IMG-20250407-WA0429.jpg" class="card-img-top" alt="Exchange Program">
+                                <div class="card-body">
+                                    <h5 class="card-title">College Exchange Programs</h5>
+                                    <p class="card-text">
+                                        Opportunities for students to interact with talent clubs from
+                                        other institutions.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="programs.html#exchange" class="btn btn-outline-primary">
+                                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="program-card card h-100">
+                                <img src="images/IMG-20250407-WA0424.jpg" class="card-img-top" alt="Mentorship Program">
+                                <div class="card-body">
+                                    <h5 class="card-title">Talent Mentorship</h5>
+                                    <p class="card-text">
+                                        One-on-one mentorship connecting students with professionals in their talent fields.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="programs.html#mentorship" class="btn btn-outline-primary">
+                                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="program-card card h-100">
+                                <img src="images/IMG-20250407-WA0425.jpg" class="card-img-top" alt="Showcase">
+                                <div class="card-body">
+                                    <h5 class="card-title">Annual Talent Showcase</h5>
+                                    <p class="card-text">
+                                        Grand event featuring the best talents from across the institution.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="programs.html#showcase" class="btn btn-outline-primary">
+                                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="program-card card h-100">
+                                <img src="images/IMG-20250407-WA0429.jpg" class="card-img-top" alt="Community Service">
+                                <div class="card-body">
+                                    <h5 class="card-title">Talent for Community</h5>
+                                    <p class="card-text">
+                                        Using talents to serve the community through various outreach programs.
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-top-0">
+                                    <a href="programs.html#community" class="btn btn-outline-primary">
+                                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm">
-              <img
-                src="images/IMG-20250407-WA0425.jpg"
-                class="card-img-top"
-                alt="Workshop"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Talent Development Workshops</h5>
-                <p class="card-text">
-                  Regular workshops with industry experts to help students
-                  refine their talents.
-                </p>
-                <a
-                  href="programs.html#workshops"
-                  class="btn btn-outline-primary"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm">
-              <img
-                src="images/IMG-20250407-WA0429.jpg"
-                class="card-img-top"
-                alt="Exchange Program"
-              />
-              <div class="card-body">
-                <h5 class="card-title">College Exchange Programs</h5>
-                <p class="card-text">
-                  Opportunities for students to interact with talent clubs from
-                  other institutions.
-                </p>
-                <a href="programs.html#exchange" class="btn btn-outline-primary"
-                  >Read More</a
-                >
-              </div>
-            </div>
-          </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#programsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#programsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="programs.html" class="btn btn-primary btn-lg">View All Programs</a>
         </div>
       </div>
     </section>
 
     <!-- Impact Stats -->
-    <section class="py-5 bg-primary text-white">
+    <section class="content-section impact-section text-white">
       <div class="container">
-        <h2 class="text-center mb-5">Our Impact</h2>
+        <h2 class="section-title text-white">Our Impact</h2>
         <div class="row text-center">
-          <div class="col-md-3">
-            <h3 class="display-4 fw-bold">500+</h3>
-            <p>Students Engaged</p>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="stat-number">500+</div>
+            <p class="h5">Students Engaged</p>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="stat-number">50+</div>
+            <p class="h5">Talents Identified</p>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="stat-number">10+</div>
+            <p class="h5">Industry Partners</p>
           </div>
           <div class="col-md-3">
-            <h3 class="display-4 fw-bold">50+</h3>
-            <p>Talents Identified</p>
-          </div>
-          <div class="col-md-3">
-            <h3 class="display-4 fw-bold">10+</h3>
-            <p>Industry Partners</p>
-          </div>
-          <div class="col-md-3">
-            <h3 class="display-4 fw-bold">5+</h3>
-            <p>Annual Events</p>
+            <div class="stat-number">5+</div>
+            <p class="h5">Annual Events</p>
           </div>
         </div>
-        <div class="text-center mt-4">
-          <a href="impact.html" class="btn btn-light">See Our Full Impact</a>
+        <div class="text-center mt-5">
+          <a href="impact.html" class="btn btn-light btn-lg">See Our Full Impact</a>
         </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="py-5">
+    <section class="content-section">
       <div class="container">
-        <h2 class="text-center mb-5">What Our Students Say</h2>
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div
-              id="testimonialCarousel"
-              class="carousel slide"
-              data-bs-ride="carousel"
-            >
+        <h2 class="section-title">What Our Students Say</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
-                <div class="carousel-item active shadow-lg">
-                  <div class="testimonial-card text-center p-4">
-                    <img
-                      src="images/IMG-20250407-WA0444.jpg"
-                      class="rounded-circle mb-3"
-                      width="100"
-                      alt="Student"
-                    />
-                    <p class="lead">
+                <div class="carousel-item active">
+                  <div class="testimonial-card text-center p-5">
+                    <img src="images/IMG-20250407-WA0444.jpg" class="rounded-circle testimonial-img mb-4" alt="Student">
+                    <p class="lead mb-4">
                       "IGAT club helped me discover my singing talent. Through
                       their platform, I got to perform at national events and
                       even won a scholarship!"
                     </p>
                     <h5>Sarah M.</h5>
-                    <p>Music Talent</p>
+                    <p class="text-muted">Music Talent</p>
                   </div>
                 </div>
-                <div class="carousel-item shadow-lg">
-                  <div class="testimonial-card text-center p-4">
-                    <img
-                      src="images/IMG-20250407-WA0444.jpg"
-                      class="rounded-circle mb-3"
-                      width="100"
-                      alt="Student"
-                    />
-                    <p class="lead">
+                <div class="carousel-item">
+                  <div class="testimonial-card text-center p-5">
+                    <img src="images/IMG-20250407-WA0444.jpg" class="rounded-circle testimonial-img mb-4" alt="Student">
+                    <p class="lead mb-4">
                       "The coding workshops organized by IGAT connected me with
                       industry mentors. I've now developed three mobile apps!"
                     </p>
                     <h5>James K.</h5>
-                    <p>Tech Innovation</p>
+                    <p class="text-muted">Tech Innovation</p>
                   </div>
                 </div>
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#testimonialCarousel"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
               </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#testimonialCarousel"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+              <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
               </button>
             </div>
           </div>
@@ -293,99 +609,102 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-5 bg-light">
+    <section class="content-section cta-section">
       <div class="container text-center">
-        <h2 class="mb-4">Ready to Make a Difference?</h2>
-        <p class="lead mb-4">
+        <h2 class="section-title">Ready to Make a Difference?</h2>
+        <p class="lead mb-5">
           Support talented students by donating, volunteering or partnering with
           us.
         </p>
-        <a href="support.html" class="btn btn-primary btn-lg me-2"
-          >Support Our Cause</a
-        >
-        <a href="contact.html" class="btn btn-outline-primary btn-lg"
-          >Contact Us</a
-        >
+        <div class="d-flex justify-content-center gap-3">
+            <a href="support.html" class="btn btn-primary btn-lg px-4 py-2">
+                Support Our Cause
+            </a>
+            <a href="contact.html" class="btn btn-outline-primary btn-lg px-4 py-2">
+                Contact Us
+            </a>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="bg-dark text-white py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <h5>About IGAT Club</h5>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h3 class="h4 mb-3">IGAT Club</h3>
             <p>
               Identifying and nurturing talents among students at Kisii National
               Polytechnic since 2018.
             </p>
-            <div class="social-icons">
-              <a href="#" class="text-white me-2"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="text-white me-2"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#" class="text-white me-2"
-                ><i class="fab fa-instagram"></i
-              ></a>
+            <div class="social-icons mt-4">
+              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
               <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
-          <div class="col-md-2">
-            <h5>Quick Links</h5>
+          <div class="col-lg-2 mb-4 mb-lg-0">
+            <h3 class="h4 mb-3">Quick Links</h3>
             <ul class="list-unstyled">
-              <li><a href="index.html" class="text-white">Home</a></li>
-              <li><a href="about.html" class="text-white">About</a></li>
-              <li><a href="programs.html" class="text-white">Programs</a></li>
-              <li><a href="news.html" class="text-white">News</a></li>
+              <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
+              <li class="mb-2"><a href="about.html" class="text-white">About</a></li>
+              <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
+              <li class="mb-2"><a href="news.html" class="text-white">News</a></li>
+              <li><a href="contact.html" class="text-white">Contact</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5>Contact Info</h5>
+          <div class="col-lg-3 mb-4 mb-lg-0">
+            <h3 class="h4 mb-3">Contact Info</h3>
             <ul class="list-unstyled">
-              <li>
-                <i class="fas fa-map-marker-alt me-2"></i> Kisii National
-                Polytechnic
-              </li>
-              <li><i class="fas fa-phone me-2"></i> 0722 995 763</li>
-              <li>
-                <i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com
-              </li>
+              <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Kisii National Polytechnic</li>
+              <li class="mb-2"><i class="fas fa-phone me-2"></i> 0722 995 763</li>
+              <li class="mb-2"><i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com</li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5>Newsletter</h5>
+          <div class="col-lg-3">
+            <h3 class="h4 mb-3">Newsletter</h3>
             <p>Subscribe to our newsletter for updates</p>
             <form class="mb-3">
               <div class="input-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Your Email"
-                />
+                <input type="email" class="form-control" placeholder="Your Email">
                 <button class="btn btn-primary" type="submit">Subscribe</button>
               </div>
             </form>
           </div>
         </div>
-        <hr class="my-4" />
+        <hr class="my-4 bg-light">
         <div class="row">
-          <div class="col-md-6">
-            <p class="mb-0">&copy; 2023 IGAT Club. All rights reserved.</p>
+          <div class="col-md-6 text-center text-md-start">
+            <p class="small mb-0">&copy; 2023 IGAT Club. All rights reserved.</p>
           </div>
-          <div class="col-md-6 text-md-end">
-            <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
-            <a href="terms.html" class="text-white">Terms of Service</a>
+          <div class="col-md-6 text-center text-md-end">
+            <a href="privacy.html" class="text-white me-3 small">Privacy Policy</a>
+            <a href="terms.html" class="text-white small">Terms of Service</a>
           </div>
         </div>
       </div>
     </footer>
-    <!-- Bootstrap JS -->
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
-  </body>
+    <script>
+        // Initialize carousel with interval
+        document.addEventListener('DOMContentLoaded', function() {
+            // Programs carousel
+            const programsCarousel = new bootstrap.Carousel('#programsCarousel', {
+                interval: 5000,
+                wrap: true
+            });
+            
+            // Testimonial carousel
+            const testimonialCarousel = new bootstrap.Carousel('#testimonialCarousel', {
+                interval: 6000,
+                wrap: true
+            });
+        });
+    </script>
+</body>
 </html>
-<!-- End of index.html -->
