@@ -88,8 +88,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brand-logo {
-    height: 40px;
-    width: 40px;
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .brand-name {
@@ -103,6 +106,14 @@ h1, h2, h3, h4, h5, h6 {
 .navbar.scrolled .brand-name {
     color: var(--primary-color);
 }
+/* Color adaptation for scrolled state */
+.navbar.scrolled .brand-logo {
+    color: #4CAF50;
+  }
+  /* Ensure text remains visible */
+.brand-logo text {
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+  }
 
 /* Nav list */
 .nav-list {
@@ -301,6 +312,9 @@ h1, h2, h3, h4, h5, h6 {
       z-index: 1000;
       transition: right 0.3s ease;
     }
+    .brand-logo {
+        height: 36px;
+      }
     
     .nav-list {
       flex-direction: column;
@@ -365,6 +379,11 @@ h1, h2, h3, h4, h5, h6 {
     
     .navbar.scrolled .menu-close {
       color: #4CAF50;
+    }
+  }
+  @media (max-width: 576px) {
+    .brand-logo {
+      height: 32px;
     }
   }
   
