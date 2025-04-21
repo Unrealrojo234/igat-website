@@ -1,75 +1,97 @@
 document.addEventListener('DOMContentLoaded', function() {
     // ==================== NAVBAR FUNCTIONALITY ====================
-    // Mobile menu toggle elements
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuClose = document.querySelector('.menu-close');
-    const navList = document.querySelector('.nav-list');
-    const navOverlay = document.querySelector('.nav-overlay');
-    
-    // Toggle mobile menu function
-    function toggleMenu() {
-        navList.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        document.body.style.overflow = navList.classList.contains('active') ? 'hidden' : '';
-        
-        // Update ARIA attributes for accessibility
-        const isExpanded = navList.classList.contains('active');
-        menuToggle.setAttribute('aria-expanded', isExpanded);
-        navList.setAttribute('aria-hidden', !isExpanded);
-    }
-    
-    // Close mobile menu function
-    function closeMenu() {
-        navList.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        menuToggle.setAttribute('aria-expanded', 'false');
-        navList.setAttribute('aria-hidden', 'true');
-    }
-    
-    // Event listeners for menu toggle
-    if (menuToggle && navList) {
-        menuToggle.addEventListener('click', toggleMenu);
-        
-        // Close button
-        if (menuClose) {
-            menuClose.addEventListener('click', closeMenu);
-        }
-        
-        // Overlay click to close
-        if (navOverlay) {
-            navOverlay.addEventListener('click', closeMenu);
-        }
-        
-        // Close when clicking on nav links (mobile)
-        const navLinks = document.querySelectorAll('.nav-list a:not(.dropdown a)');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    closeMenu();
-                }
-            });
-        });
-    }
-    
-    // Mobile dropdown functionality
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        
-        if (link) {
-            link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
-                    
-                    // Update ARIA attributes
-                    const isExpanded = dropdown.classList.contains('active');
-                    link.setAttribute('aria-expanded', isExpanded);
-                }
-            });
-        }
-    });
+   // Mobile menu elements
+   const menuToggle = document.querySelector('.menu-toggle');
+   const menuClose = document.querySelector('.menu-close');
+   const navContainer = document.querySelector('.nav-container');
+   const navOverlay = document.querySelector('.nav-overlay');
+   const dropdownToggles = document.querySelectorAll('.dropdown > a');
+ 
+   // Toggle mobile menu
+   function toggleMenu() {
+     navContainer.classList.toggle('active');
+     navOverlay.classList.toggle('active');
+     document.body.style.overflow = navContainer.classList.contains('active') ? 'hidden' : '';
+     
+     // Update ARIA attributes
+     const isExpanded = navContainer.classList.contains('active');
+     menuToggle.setAttribute('aria-expanded', isExpanded);
+     document.getElementById('nav-list').setAttribute('aria-hidden', !isExpanded);
+   }
+ 
+   // Close mobile menu
+   function closeMenu() {
+     navContainer.classList.remove('active');
+     navOverlay.classList.remove('active');
+     document.body.style.overflow = '';
+     menuToggle.setAttribute('aria-expanded', 'false');
+     document.getElementById('nav-list').setAttribute('aria-hidden', 'true');
+     
+     // Close any open dropdowns
+     document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+       dropdown.classList.remove('active');
+       dropdown.querySelector('a').setAttribute('aria-expanded', 'false');
+     });
+   }
+ 
+   // Event listeners
+   if (menuToggle) {
+     menuToggle.addEventListener('click', toggleMenu);
+   }
+ 
+   if (menuClose) {
+     menuClose.addEventListener('click', closeMenu);
+   }
+ 
+   if (navOverlay) {
+     navOverlay.addEventListener('click', closeMenu);
+   }
+ 
+   // Mobile dropdown functionality
+   dropdownToggles.forEach(toggle => {
+     toggle.addEventListener('click', function(e) {
+       if (window.innerWidth <= 768) {
+         e.preventDefault();
+         const dropdown = this.parentElement;
+         const isExpanding = !dropdown.classList.contains('active');
+         
+         // Close other dropdowns first
+         document.querySelectorAll('.dropdown.active').forEach(activeDropdown => {
+           if (activeDropdown !== dropdown) {
+             activeDropdown.classList.remove('active');
+             activeDropdown.querySelector('a').setAttribute('aria-expanded', 'false');
+           }
+         });
+         
+         // Toggle current dropdown
+         dropdown.classList.toggle('active');
+         this.setAttribute('aria-expanded', dropdown.classList.contains('active'));
+         
+         // Scroll into view if opening
+         if (isExpanding) {
+           setTimeout(() => {
+             dropdown.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+           }, 100);
+         }
+       }
+     });
+   });
+ 
+   // Close menu when clicking on nav links (mobile)
+   document.querySelectorAll('.nav-item:not(.dropdown) > a').forEach(link => {
+     link.addEventListener('click', function() {
+       if (window.innerWidth <= 768) {
+         closeMenu();
+       }
+     });
+   });
+ 
+   // Close menu on escape key
+   document.addEventListener('keydown', function(e) {
+     if (e.key === 'Escape' && navContainer.classList.contains('active')) {
+       closeMenu();
+     }
+   });
 
     // ==================== NAVBAR SCROLL BEHAVIOR ====================
     const navbar = document.querySelector('.navbar');

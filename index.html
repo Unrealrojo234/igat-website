@@ -234,8 +234,8 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="brand">
-          <img src="https://via.placeholder.com/40x40" alt="Logo" class="brand-logo">
-          <a href="#" class="brand-name">IGAT Club</a>
+        <img src="https://via.placeholder.com/40x40" alt="Logo" class="brand-logo">
+        <a href="#" class="brand-name">IGAT Club</a>
       </div>
       
       <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
@@ -244,23 +244,24 @@
       
       <div class="nav-overlay"></div>
       
-      <ul class="nav-list" id="nav-list" aria-hidden="true">
-          <button class="menu-close" aria-label="Close menu">×</button>
-          <li class="nav-item active"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="about.html">About Us</a></li>
+      <div class="nav-container">
+        <ul class="nav-list" id="nav-list" aria-hidden="true">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item active"><a href="about.html">About Us</a></li>
           <li class="nav-item"><a href="programs.html">Programs</a></li>
           <li class="nav-item dropdown">
-              <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
-              <div class="dropdown-content">
-                  <a href="impact.html">Impact</a>
-                  <a href="showcase.html">Showcase</a>
-                  <a href="news.html">News</a>
-                  <a href="support.html">Support</a>
-                  <a href="faq.html">FAQ</a>
-              </div>
+            <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+            <div class="dropdown-content">
+              <a href="impact.html">Impact</a>
+              <a href="showcase.html">Showcase</a>
+              <a href="news.html">News</a>
+              <a href="support.html">Support</a>
+              <a href="faq.html">FAQ</a>
+            </div>
           </li>
           <li class="nav-item"><a href="contact.html">Contact</a></li>
-      </ul>
+        </ul>
+      </div>
     </nav>
 
     <!-- Hero Section -->
@@ -269,15 +270,86 @@
         <h1 class="display-3 fw-bold mb-4">Unlocking Potential Through Talent</h1>
         <p class="lead mb-5">Discover, Develop, and Showcase Your Hidden Talents</p>
         <div class="d-flex justify-content-center gap-3">
-            <a href="programs.html" class="btn btn-light btn-lg px-4 py-2">
-                Explore Programs <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-            <a href="support.html" class="btn btn-outline-light btn-lg px-4 py-2">
-                Support Us
-            </a>
+          <a href="programs.html" class="btn btn-light btn-lg px-4 py-2">
+            Explore Programs <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+          <a href="support.html" class="btn btn-outline-light btn-lg px-4 py-2">
+            Support Us
+          </a>
         </div>
       </div>
     </header>
+    <style>
+      /* Updated Hero Section Styles */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                    url('images/IMG-20250407-WA0451.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: var(--section-padding);
+        margin-top: 80px;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
+      
+      .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+      }
+      
+      .hero-section .lead {
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .hero-section h1 {
+          font-size: 3rem;
+        }
+        
+        .hero-section .lead {
+          font-size: 1.3rem;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .hero-section {
+          background-attachment: scroll;
+          min-height: auto;
+        }
+        
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+        
+        .hero-section .lead {
+          font-size: 1.2rem;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+        
+        .hero-section .lead {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
 
     <!-- Mission Statement -->
     <section class="py-5 bg-light">
