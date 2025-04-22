@@ -214,7 +214,7 @@
         </a>
         <a href="#" class="brand-name">IGAT Club</a>
       </div>
-
+    
       <button
         class="menu-toggle"
         aria-label="Menu"
@@ -223,9 +223,10 @@
       >
         ☰
       </button>
-
-      <div class="nav-overlay"></div>
-
+    
+      <!-- Moved overlay to be sibling of nav-container -->
+      <div class="nav-overlay" aria-hidden="true"></div>
+    
       <div class="nav-container">
         <ul class="nav-list" id="nav-list" aria-hidden="true">
           <li class="nav-item"><a href="index.html">Home</a></li>
@@ -245,7 +246,6 @@
         </ul>
       </div>
     </nav>
-
     <!-- Page Header -->
     <header
       class="faq-header page-header"
