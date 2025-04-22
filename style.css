@@ -227,7 +227,17 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1001;
+    transition: transform 0.4s ease-in-out;
+    font-size: 1.5rem;
+    padding: 0.5rem;
 }
+.menu-toggle[aria-expanded="true"] {
+    transform: rotate(360deg);
+  }
+  /* Optional: Add some hover effects */
+.menu-toggle:hover {
+    opacity: 0.8;
+  }
 
 .navbar.scrolled .menu-toggle {
     color: var(--primary-color);
@@ -493,6 +503,8 @@ section {
     text-align: center;
     
 }
+/*Testmonial Section*/
+
 
 .hero-section {
     --header-image: url('images/IMG-20250407-WA0439.jpg');
@@ -537,7 +549,21 @@ section {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     padding: 1.5rem;
 }
+.testimonial-img-container img
+{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    margin:0 auto;
+    width: 150px;
+    left: 10rem;
+    object-fit: cover;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 0;
 
+}
 .testimonial-item img {
     border: 3px solid var(--primary-light);
 }
@@ -782,6 +808,21 @@ footer small {
     .right {
         left: 0;
     }
+    .testimonial-img-container img
+{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    margin: auto;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
 }
 
 @media (max-width: 767.98px) {
