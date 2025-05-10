@@ -81,7 +81,7 @@ dropdownToggles.forEach(toggle => {
           activeDropdown.classList.remove('active');
           activeDropdown.querySelector('a').setAttribute('aria-expanded', 'false');
         }
-      });
+      }); 
       
       dropdown.classList.toggle('active');
       this.setAttribute('aria-expanded', dropdown.classList.contains('active'));
