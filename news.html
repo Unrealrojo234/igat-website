@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
@@ -698,5 +699,19 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script>
+      const carousel = new bootstrap.Carousel("#myCarousel");
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000,
+        once: false,
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/7b3b6f1d2f.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
