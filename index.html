@@ -972,6 +972,9 @@
       AOS.init({
         duration: 3000,
         once: false,
+        disable: function() {
+    return window.innerWidth < 768; // Disable below 768px
+  }
       });
     </script>
     <script
