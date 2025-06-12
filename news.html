@@ -709,6 +709,9 @@
         once: false,
         easing: "ease-in-out",
         mirror: false,
+        disable: function() {
+    return window.innerWidth <=768; // Disable below 768px
+  }
       });
     </script>
     <script
