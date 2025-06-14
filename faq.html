@@ -1,362 +1,754 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQs - IGAT Club</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="IGAT Logo" height="50">
-                IGAT Club
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="offcanvas-header d-lg-none">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="programs.html">Programs</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            More
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="impact.html">Impact</a></li>
-                            <li><a class="dropdown-item" href="showcase.html">Showcase</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      :root {
+        /* Primary Colors */
+        --primary-color: #4caf50;
+        --primary-dark: #388e3c;
+        --primary-light: #c8e6c9;
 
-    <!-- Page Header -->
-    <header class="faq-header">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12 text-center">
-                    <h1 class="fw-bold text-white">Frequently Asked Questions</h1>
-                    <p class="lead text-white">Find answers to common questions about IGAT Club</p>
-                </div>
+        /* Text Colors */
+        --text-dark: #2c3e50;
+        --text-medium: #555;
+        --text-light: #f8f9fa;
+
+        /* Spacing */
+        --section-padding: 5rem 0;
+        --section-padding-md: 4rem 0;
+        --section-padding-sm: 3rem 0;
+      }
+
+      /* Base Styles */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-medium);
+        line-height: 1.7;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background-color: rgba(76, 175, 80, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        transition: all 0.3s ease;
+      }
+
+      .brand-name {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: white;
+      }
+
+      /* Header/Hero Sections */
+      .page-header {
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: var(--section-padding);
+        margin-top: 80px;
+        position: relative;
+      }
+
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .page-header .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-header h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .page-header .lead {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Content Sections */
+      .content-section {
+        padding: var(--section-padding);
+      }
+
+      .section-title {
+        position: relative;
+        padding-bottom: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+      }
+
+      /* Cards */
+      .custom-card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+      }
+
+      .custom-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        :root {
+          --section-padding: var(--section-padding-md);
+        }
+
+        .page-header h1 {
+          font-size: 3rem;
+        }
+
+        .page-header .lead {
+          font-size: 1.3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --section-padding: var(--section-padding-sm);
+        }
+
+        .page-header h1 {
+          font-size: 2.5rem;
+        }
+
+        .page-header .lead {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-header h1 {
+          font-size: 2rem;
+        }
+
+        .page-header .lead {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="brand">
+        <!-- Replace the placeholder image with SVG logo -->
+        <a href="#" class="logo-link">
+          <svg
+            class="brand-logo"
+            viewBox="0 0 200 80"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="IGAT GOTATALENT"
+          >
+            <text
+              x="0"
+              y="45"
+              font-family="'Montserrat', sans-serif"
+              font-weight="700"
+              font-size="42"
+              fill="currentColor"
+            >
+              IGAT
+            </text>
+            <text
+              x="0"
+              y="70"
+              font-family="'Montserrat', sans-serif"
+              font-weight="500"
+              font-size="28"
+              fill="currentColor"
+            >
+              GOTATALENT
+            </text>
+          </svg>
+        </a>
+        <a href="#" class="brand-name">IGAT Club</a>
+      </div>
+    
+      <button
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="nav-list"
+      >
+        ☰
+      </button>
+    
+      <!-- Moved overlay to be sibling of nav-container -->
+      <div class="nav-overlay" aria-hidden="true"></div>
+    
+      <div class="nav-container">
+        <ul class="nav-list" id="nav-list" aria-hidden="true">
+          <li class="nav-item active"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="programs.html">Programs</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+            <div class="dropdown-content">
+              <a href="impact.html">Impact</a>
+              <a href="showcase.html">Showcase</a>
+              <a href="news.html">News</a>
+              <a href="support.html">Support</a>
+              <a href="faq.html">FAQ</a>
             </div>
+          </li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Page Header -->
+    <header
+      class="faq-header page-header"
+      style="background-image: url('/images/IMG-20250407-WA0456.jpg')"
+    >
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-bold text-white">Frequently Asked Questions</h1>
+            <p class="lead text-white">
+              Find answers to common questions about IGAT Club
+            </p>
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- FAQ Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="accordion" id="faqAccordion">
-                        <!-- Membership Questions -->
-                        <h3 class="mt-5 mb-3 text-primary">Membership Questions</h3>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
-                                    How can I join IGAT Club?
-                                </button>
-                            </h2>
-                            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>All Kisii National Polytechnic students are welcome to join IGAT Club. You can register during our recruitment drives at the beginning of each semester or visit our office in the Student Affairs building. There are no membership fees.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
-                                    Is there a membership fee?
-                                </button>
-                            </h2>
-                            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>No, IGAT Club membership is completely free for all Kisii National Polytechnic students. Our activities are funded through sponsorships and donations.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
-                                    Can I join if I'm not sure about my talent?
-                                </button>
-                            </h2>
-                            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Absolutely! Many students join IGAT Club precisely to discover their hidden talents. Our talent identification workshops and activities are designed to help you uncover abilities you may not have recognized in yourself.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Programs Questions -->
-                        <h3 class="mt-5 mb-3 text-primary">Program Questions</h3>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
-                                    What types of talents does IGAT Club support?
-                                </button>
-                            </h2>
-                            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>We support a wide range of talents including but not limited to:</p>
-                                    <ul>
-                                        <li>Music (vocal and instrumental)</li>
-                                        <li>Dance and performing arts</li>
-                                        <li>Visual arts (painting, drawing, photography)</li>
-                                        <li>Creative writing and poetry</li>
-                                        <li>Technical innovations and inventions</li>
-                                        <li>Sports and physical talents</li>
-                                        <li>Public speaking and debate</li>
-                                    </ul>
-                                    <p>If you have a talent that's not listed, we'd still love to hear about it!</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive">
-                                    How often is KNP Talent Day held?
-                                </button>
-                            </h2>
-                            <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>KNP Talent Day is held twice per academic year - once each semester. The exact dates are announced at the beginning of each semester.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix">
-                                    Can I participate in multiple talent categories?
-                                </button>
-                            </h2>
-                            <div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes, students are welcome to participate in multiple talent categories, though we recommend focusing on your strongest areas to allow time for proper preparation.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Support Questions -->
-                        <h3 class="mt-5 mb-3 text-primary">Support & Partnership Questions</h3>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven">
-                                    How can organizations partner with IGAT Club?
-                                </button>
-                            </h2>
-                            <div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>We welcome partnerships with organizations that share our vision for talent development. Partnership opportunities include:</p>
-                                    <ul>
-                                        <li>Sponsoring events or programs</li>
-                                        <li>Providing internship opportunities for our talented students</li>
-                                        <li>Offering mentorship or workshop facilitation</li>
-                                        <li>Collaborating on talent development research</li>
-                                        <li>Funding scholarships for talented students</li>
-                                    </ul>
-                                    <p>Please contact us to discuss potential partnership opportunities.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight">
-                                    How are donations to IGAT Club used?
-                                </button>
-                            </h2>
-                            <div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Donations support various club activities including:</p>
-                                    <ul>
-                                        <li>Organizing talent shows and competitions</li>
-                                        <li>Purchasing equipment and materials for workshops</li>
-                                        <li>Bringing in professional trainers and mentors</li>
-                                        <li>Funding student participation in external events</li>
-                                        <li>Providing awards and incentives for outstanding talents</li>
-                                        <li>Covering administrative and operational costs</li>
-                                    </ul>
-                                    <p>We provide regular reports to donors on how their contributions are being used.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqNine">
-                                    Can I volunteer with IGAT Club?
-                                </button>
-                            </h2>
-                            <div id="faqNine" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes! We welcome volunteers in various capacities:</p>
-                                    <ul>
-                                        <li>Workshop facilitators in specific talent areas</li>
-                                        <li>Event organizers and coordinators</li>
-                                        <li>Competition judges</li>
-                                        <li>Mentors for talented students</li>
-                                        <li>Fundraising and outreach support</li>
-                                    </ul>
-                                    <p>Please visit our <a href="support.html">Support Us</a> page or contact us directly to discuss volunteer opportunities.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Alumni Questions -->
-                        <h3 class="mt-5 mb-3 text-primary">Alumni Questions</h3>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTen">
-                                    Can alumni continue to be involved with IGAT Club?
-                                </button>
-                            </h2>
-                            <div id="faqTen" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Absolutely! We value our alumni and offer several ways to stay involved:</p>
-                                    <ul>
-                                        <li>Return as mentors or workshop facilitators</li>
-                                        <li>Participate as judges in competitions</li>
-                                        <li>Share your success stories to inspire current students</li>
-                                        <li>Support through donations or sponsorships</li>
-                                        <li>Participate in alumni networking events</li>
-                                    </ul>
-                                    <p>Many of our most successful alumni maintain strong connections with the club.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEleven">
-                                    How can alumni give back to IGAT Club?
-                                </button>
-                            </h2>
-                            <div id="faqEleven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Alumni can contribute in many ways:</p>
-                                    <ul>
-                                        <li>Financial donations to support club activities</li>
-                                        <li>Sharing professional expertise through workshops</li>
-                                        <li>Providing internship or employment opportunities</li>
-                                        <li>Mentoring current students</li>
-                                        <li>Helping to expand our professional network</li>
-                                        <li>Sharing your IGAT success story to inspire others</li>
-                                    </ul>
-                                    <p>Contact us to discuss how you'd like to contribute.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <section class="py-5 content-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="accordion" id="faqAccordion">
+              <!-- Membership Questions -->
+              <h3 class="mt-5 mb-3 text-primary">Membership Questions</h3>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqOne"
+                  >
+                    How can I join IGAT Club?
+                  </button>
+                </h2>
+                <div
+                  id="faqOne"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      All Kisii National Polytechnic students are welcome to
+                      join IGAT Club. You can register during our recruitment
+                      drives at the beginning of each semester or visit our
+                      office in the Student Affairs building. There are no
+                      membership fees.
+                    </p>
+                  </div>
                 </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqTwo"
+                  >
+                    Is there a membership fee?
+                  </button>
+                </h2>
+                <div
+                  id="faqTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      No, IGAT Club membership is completely free for all Kisii
+                      National Polytechnic students. Our activities are funded
+                      through sponsorships and donations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqThree"
+                  >
+                    Can I join if I'm not sure about my talent?
+                  </button>
+                </h2>
+                <div
+                  id="faqThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Absolutely! Many students join IGAT Club precisely to
+                      discover their hidden talents. Our talent identification
+                      workshops and activities are designed to help you uncover
+                      abilities you may not have recognized in yourself.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Programs Questions -->
+              <h3 class="mt-5 mb-3 text-primary">Program Questions</h3>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqFour"
+                  >
+                    What types of talents does IGAT Club support?
+                  </button>
+                </h2>
+                <div
+                  id="faqFour"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      We support a wide range of talents including but not
+                      limited to:
+                    </p>
+                    <ul>
+                      <li>Music (vocal and instrumental)</li>
+                      <li>Dance and performing arts</li>
+                      <li>Visual arts (painting, drawing, photography)</li>
+                      <li>Creative writing and poetry</li>
+                      <li>Technical innovations and inventions</li>
+                      <li>Sports and physical talents</li>
+                      <li>Public speaking and debate</li>
+                    </ul>
+                    <p>
+                      If you have a talent that's not listed, we'd still love to
+                      hear about it!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqFive"
+                  >
+                    How often is KNP Talent Day held?
+                  </button>
+                </h2>
+                <div
+                  id="faqFive"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      KNP Talent Day is held twice per academic year - once each
+                      semester. The exact dates are announced at the beginning
+                      of each semester.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqSix"
+                  >
+                    Can I participate in multiple talent categories?
+                  </button>
+                </h2>
+                <div
+                  id="faqSix"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Yes, students are welcome to participate in multiple
+                      talent categories, though we recommend focusing on your
+                      strongest areas to allow time for proper preparation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Support Questions -->
+              <h3 class="mt-5 mb-3 text-primary">
+                Support & Partnership Questions
+              </h3>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqSeven"
+                  >
+                    How can organizations partner with IGAT Club?
+                  </button>
+                </h2>
+                <div
+                  id="faqSeven"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      We welcome partnerships with organizations that share our
+                      vision for talent development. Partnership opportunities
+                      include:
+                    </p>
+                    <ul>
+                      <li>Sponsoring events or programs</li>
+                      <li>
+                        Providing internship opportunities for our talented
+                        students
+                      </li>
+                      <li>Offering mentorship or workshop facilitation</li>
+                      <li>Collaborating on talent development research</li>
+                      <li>Funding scholarships for talented students</li>
+                    </ul>
+                    <p>
+                      Please contact us to discuss potential partnership
+                      opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqEight"
+                  >
+                    How are donations to IGAT Club used?
+                  </button>
+                </h2>
+                <div
+                  id="faqEight"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>Donations support various club activities including:</p>
+                    <ul>
+                      <li>Organizing talent shows and competitions</li>
+                      <li>Purchasing equipment and materials for workshops</li>
+                      <li>Bringing in professional trainers and mentors</li>
+                      <li>Funding student participation in external events</li>
+                      <li>
+                        Providing awards and incentives for outstanding talents
+                      </li>
+                      <li>Covering administrative and operational costs</li>
+                    </ul>
+                    <p>
+                      We provide regular reports to donors on how their
+                      contributions are being used.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqNine"
+                  >
+                    Can I volunteer with IGAT Club?
+                  </button>
+                </h2>
+                <div
+                  id="faqNine"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>Yes! We welcome volunteers in various capacities:</p>
+                    <ul>
+                      <li>Workshop facilitators in specific talent areas</li>
+                      <li>Event organizers and coordinators</li>
+                      <li>Competition judges</li>
+                      <li>Mentors for talented students</li>
+                      <li>Fundraising and outreach support</li>
+                    </ul>
+                    <p>
+                      Please visit our
+                      <a href="support.html">Support Us</a> page or contact us
+                      directly to discuss volunteer opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alumni Questions -->
+              <h3 class="mt-5 mb-3 text-primary">Alumni Questions</h3>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqTen"
+                  >
+                    Can alumni continue to be involved with IGAT Club?
+                  </button>
+                </h2>
+                <div
+                  id="faqTen"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Absolutely! We value our alumni and offer several ways to
+                      stay involved:
+                    </p>
+                    <ul>
+                      <li>Return as mentors or workshop facilitators</li>
+                      <li>Participate as judges in competitions</li>
+                      <li>
+                        Share your success stories to inspire current students
+                      </li>
+                      <li>Support through donations or sponsorships</li>
+                      <li>Participate in alumni networking events</li>
+                    </ul>
+                    <p>
+                      Many of our most successful alumni maintain strong
+                      connections with the club.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faqEleven"
+                  >
+                    How can alumni give back to IGAT Club?
+                  </button>
+                </h2>
+                <div
+                  id="faqEleven"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>Alumni can contribute in many ways:</p>
+                    <ul>
+                      <li>Financial donations to support club activities</li>
+                      <li>Sharing professional expertise through workshops</li>
+                      <li>Providing internship or employment opportunities</li>
+                      <li>Mentoring current students</li>
+                      <li>Helping to expand our professional network</li>
+                      <li>Sharing your IGAT success story to inspire others</li>
+                    </ul>
+                    <p>Contact us to discuss how you'd like to contribute.</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Still Have Questions -->
     <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="fw-bold text-primary mb-4">Still Have Questions?</h2>
-                    <p class="lead mb-4">If you didn't find the answer to your question, feel free to contact us directly.</p>
-                    <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="fw-bold text-primary mb-4">Still Have Questions?</h2>
+            <p class="lead mb-4">
+              If you didn't find the answer to your question, feel free to
+              contact us directly.
+            </p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>About IGAT Club</h5>
-                    <p>Identifying and nurturing talents among students at Kisii National Polytechnic since 2018.</p>
-                    <div class="social-icons">
-                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="about.html" class="text-white">About</a></li>
-                        <li><a href="programs.html" class="text-white">Programs</a></li>
-                        <li><a href="news.html" class="text-white">News</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Contact Info</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Kisii National Polytechnic</li>
-                        <li><i class="fas fa-phone me-2"></i> 0722 995 763</li>
-                        <li><i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5>Newsletter</h5>
-                    <p>Subscribe to our newsletter for updates</p>
-                    <form class="mb-3">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About IGAT Club</h5>
+            <p>
+              Identifying and nurturing talents among students at Kisii National
+              Polytechnic since 2018.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
             </div>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2023 IGAT Club. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
-                    <a href="terms.html" class="text-white">Terms of Service</a>
-                </div>
-            </div>
+          </div>
+          <div class="col-md-2">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white">Home</a></li>
+              <li><a href="about.html" class="text-white">About</a></li>
+              <li><a href="programs.html" class="text-white">Programs</a></li>
+              <li><a href="news.html" class="text-white">News</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Contact Info</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i> Kisii National
+                Polytechnic
+              </li>
+              <li><i class="fas fa-phone me-2"></i> 0722 995 763</li>
+              <li>
+                <i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Newsletter</h5>
+            <p>Subscribe to our newsletter for updates</p>
+            <form class="mb-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                />
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
         </div>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2023 IGAT Club. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
+            <a href="terms.html" class="text-white">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
-</body>
+    <script>
+      const carousel = new bootstrap.Carousel("#myCarousel");
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000,
+        once: false,
+        disable: function() {
+    return window.innerWidth <=768; // Disable below 768px
+  }
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/7b3b6f1d2f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

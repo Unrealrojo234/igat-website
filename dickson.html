@@ -70,7 +70,6 @@
         right: 0;
         z-index: 1030;
         transition: all 0.3s ease;
-        width:100%;
       }
 
       .brand-name {
@@ -79,7 +78,20 @@
         color: white;
       }
 
-     
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("images/IMG-20250407-WA0451.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: var(--section-padding);
+        margin-top: 80px;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
 
       .hero-section h1 {
         font-size: 3.5rem;
@@ -399,7 +411,7 @@
       <div class="container">
         <div class="row align-items-center g-5">
           <!-- Text Content -->
-          <div class="col-lg-6 order-lg-1 order-2" data-aos="slide-right">
+          <div class="col-lg-6 order-lg-1 order-2" data-aos="flip-right">
             <div class="mission-content pe-lg-5">
               <h2 class="display-4 fw-bold text-primary position-relative mb-4">
                 Our Mission
@@ -426,10 +438,10 @@
           </div>
 
           <!-- Image -->
-          <div class="col-lg-6 order-lg-2 order-1" data-aos="slide-left">
+          <div class="col-lg-6 order-lg-2 order-1">
             <div class="mission-image-container position-relative">
               <img
-                src="images/new pic (3).jpg"
+                src="images/IMG-20250407-WA0431.jpg"
                 alt="Talent Show"
                 class="img-fluid rounded-4 shadow-lg"
               />
@@ -546,7 +558,7 @@
             <div class="carousel-item active">
               <div class="row g-4">
                 <div class="col-md-4">
-                  <div class="program-card card h-100" data-aos="slide-right">
+                  <div class="program-card card h-100">
                     <img
                       src="images/IMG-20250407-WA0424.jpg"
                       class="card-img-top"
@@ -570,7 +582,7 @@
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="program-card card h-100" data-aos="slide-up">
+                  <div class="program-card card h-100">
                     <img
                       src="images/IMG-20250407-WA0425.jpg"
                       class="card-img-top"
@@ -594,7 +606,7 @@
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <div class="program-card card h-100" data-aos="slide-left">
+                  <div class="program-card card h-100">
                     <img
                       src="images/IMG-20250407-WA0429.jpg"
                       class="card-img-top"
@@ -732,7 +744,7 @@
 
     <!-- Impact Stats -->
     <section class="content-section impact-section text-white">
-      <div class="container" data-aos="flip-left">
+      <div class="container">
         <h2 class="section-title text-white">Our Impact</h2>
         <div class="row text-center">
           <div class="col-md-3 mb-4 mb-md-0">
@@ -836,7 +848,7 @@
 
     <!-- Call to Action -->
     <section class="content-section cta-section">
-      <div class="container text-center" data-aos="flip-right">
+      <div class="container text-center">
         <h2 class="section-title">Ready to Make a Difference?</h2>
         <p class="lead mb-5">
           Support talented students by donating, volunteering or partnering with
@@ -972,9 +984,6 @@
       AOS.init({
         duration: 3000,
         once: false,
-        disable: function() {
-    return window.innerWidth <=768; // Disable below 768px
-  }
       });
     </script>
     <script

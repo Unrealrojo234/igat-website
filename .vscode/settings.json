@@ -1,0 +1,20 @@
+{
+    // // "liveServer.settings.port": 5500,
+    // "liveServer.settings.host": "0.0.0.0",
+    // "liveServer.settings.root": "/",
+    // "liveServer.settings.CustomBrowser": "chrome",
+    // "liveServer.settings.ignoreFiles": [
+    //     ".vscode/**",
+    //     "**/*.scss",
+    //     "**/*.sass",
+    //     "**/*.map"
+    // ],
+    // "liveServer.settings.AdvanceCustomBrowserCmdLine": null,
+    // "liveServer.settings.NoBrowser": false,
+    // "liveServer.settings.https": {
+    //     "enable": false,
+    //     "cert": "",
+    //     "key": "",
+    //     "passphrase": ""
+    }
+// }
