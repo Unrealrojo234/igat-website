@@ -14,12 +14,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
-    />`
+    />
+    `
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/style.css" />
     <style>
@@ -266,7 +267,7 @@
         </a>
         <a href="#" class="brand-name">IGAT Club</a>
       </div>
-    
+
       <button
         class="menu-toggle"
         aria-label="Menu"
@@ -275,10 +276,10 @@
       >
         ☰
       </button>
-    
+
       <!-- Moved overlay to be sibling of nav-container -->
       <div class="nav-overlay" aria-hidden="true"></div>
-    
+
       <div class="nav-container">
         <ul class="nav-list" id="nav-list" aria-hidden="true">
           <li class="nav-item active"><a href="index.html">Home</a></li>
@@ -298,38 +299,32 @@
         </ul>
       </div>
     </nav>
+
     <!-- Page Header -->
-    <header
-      class="showcase-header page-header"
-      style="background-image: url('images/IMG-20250407-WA0457.jpg')"
-    >
+    <header class="showcase-header">
       <div class="container h-100">
         <div class="row h-100 align-items-center">
           <div class="col-12 text-center">
-            <h1 class="display-3 fw-bold mb-4">Talent Showcase</h1>
-            <p class="lead mb-5">
+            <h1 class="fw-bold text-white">Talent Showcase</h1>
+            <p class="lead text-white">
               Celebrating the creativity and innovation of our students
             </p>
-
-            <a href="#gallery" class="btn btn-primary btn-lg px-4">
-              <i class="fas fa-arrow-down me-2"></i>view gallery
-            </a>
           </div>
         </div>
       </div>
     </header>
 
     <!-- Gallery Filters -->
-    <section class="content-section py-5" id="gallery">
+    <section class="py-5 bg-light">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
-            <h2 class="section-title">Explore Our Gallery</h2>
-            <p class="lead text-center mb-5">
+            <h2 class="fw-bold text-primary mb-4">Explore Our Gallery</h2>
+            <p>
               Browse through outstanding talents and innovations from our
               students
             </p>
-            <div class="filter-buttons mt-4">
+            <!-- <div class="filter-buttons mt-4">
               <button class="btn btn-outline-primary active" data-filter="all">
                 All
               </button>
@@ -348,213 +343,22 @@
               <button class="btn btn-outline-primary" data-filter="other">
                 Other
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </section>
 
     <!-- Gallery Grid -->
-    <section class="py-5 content-section bg-light">
+    <section class="py-5">
       <div class="container">
-        <div class="row g-4 gallery-grid">
-          <!-- Music -->
-          <div class="col-md-6 col-lg-4 gallery-item" data-category="music">
-            <div class="card border-0 shadow-sm h-100">
-              <div class="card-img-top position-relative">
-                <img
-                  src="images/IMG-20250407-WA0433.jpg"
-                  class="img-fluid w-100"
-                  alt="Music Performance"
-                />
-                <div class="badge bg-primary position-absolute top-0 end-0 m-2">
-                  Music
-                </div>
-                <a
-                  href="images/IMG-20250407-WA0436.jpg"
-                  class="gallery-preview"
-                  data-fslightbox="gallery"
-                  data-caption="Vocal performance at KNP Talent Day 2023"
-                >
-                  <div class="preview-overlay">
-                    <i class="fas fa-search-plus fa-2x"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Vocal Performance</h5>
-                <p class="card-text">
-                  Sarah's award-winning performance at KNP Talent Day 2023 that
-                  earned her a recording contract.
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-sm btn-outline-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#videoModal1"
-                  >Watch Video</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Tech -->
-          <div class="col-md-6 col-lg-4 gallery-item" data-category="tech">
-            <div class="card border-0 shadow-sm h-100">
-              <div class="card-img-top position-relative">
-                <img
-                  src="images/IMG-20250407-WA0460.jpg"
-                  class="img-fluid w-100"
-                  alt="Tech Innovation"
-                />
-                <div class="badge bg-primary position-absolute top-0 end-0 m-2">
-                  Technology
-                </div>
-                <a
-                  href="images/IMG-20250407-WA0456.jpg"
-                  class="gallery-preview"
-                  data-fslightbox="gallery"
-                  data-caption="Inventory management app developed by James"
-                >
-                  <div class="preview-overlay">
-                    <i class="fas fa-search-plus fa-2x"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Inventory Management App</h5>
-                <p class="card-text">
-                  James developed this app to help small businesses track stock,
-                  now used by 50+ businesses.
-                </p>
-                <a href="#" class="btn btn-sm btn-outline-primary"
-                  >View Project</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Art -->
-          <div class="col-md-6 col-lg-4 gallery-item" data-category="art">
-            <div class="card border-0 shadow-sm h-100">
-              <div class="card-img-top position-relative">
-                <img
-                  src="images/IMG-20250407-WA0456.jpg"
-                  class="img-fluid w-100"
-                  alt="Artwork"
-                />
-                <div class="badge bg-primary position-absolute top-0 end-0 m-2">
-                  Visual Arts
-                </div>
-                <a
-                  href="images/IMG-20250407-WA0448.jpg"
-                  class="gallery-preview"
-                  data-fslightbox="gallery"
-                  data-caption="Grace's painting that earned her an art scholarship to Italy"
-                >
-                  <div class="preview-overlay">
-                    <i class="fas fa-search-plus fa-2x"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">"The Market Scene" Painting</h5>
-                <p class="card-text">
-                  Grace's acrylic painting that caught the attention of an
-                  Italian art professor.
-                </p>
-                <a href="#" class="btn btn-sm btn-outline-primary"
-                  >Artist Profile</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Performance -->
-          <div
-            class="col-md-6 col-lg-4 gallery-item"
-            data-category="performance"
-          >
-            <div class="card border-0 shadow-sm h-100">
-              <div class="card-img-top position-relative">
-                <img
-                  src="images/IMG-20250407-WA0448.jpg"
-                  class="img-fluid w-100"
-                  alt="Dance Performance"
-                />
-                <div class="badge bg-primary position-absolute top-0 end-0 m-2">
-                  Performance
-                </div>
-                <a
-                  href="images/IMG-20250407-WA0436.jpg"
-                  class="gallery-preview"
-                  data-fslightbox="gallery"
-                  data-caption="Traditional dance group performance at National Talent Festival"
-                >
-                  <div class="preview-overlay">
-                    <i class="fas fa-search-plus fa-2x"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Traditional Dance</h5>
-                <p class="card-text">
-                  Our dance group's award-winning performance at the National
-                  Talent Festival.
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-sm btn-outline-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#videoModal2"
-                  >Watch Video</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Tech -->
-          <div class="col-md-6 col-lg-4 gallery-item" data-category="tech">
-            <div class="card border-0 shadow-sm h-100">
-              <div class="card-img-top position-relative">
-                <img
-                  src="images/IMG-20250407-WA0436.jpg"
-                  class="img-fluid w-100"
-                  alt="Robotics Project"
-                />
-                <div class="badge bg-primary position-absolute top-0 end-0 m-2">
-                  Technology
-                </div>
-                <a
-                  href="images/showcase5.jpg"
-                  class="gallery-preview"
-                  data-fslightbox="gallery"
-                  data-caption="Automated irrigation system developed by engineering students"
-                >
-                  <div class="preview-overlay">
-                    <i class="fas fa-search-plus fa-2x"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Automated Irrigation System</h5>
-                <p class="card-text">
-                  Smart farming solution developed by engineering students for
-                  small-scale farmers.
-                </p>
-                <a href="#" class="btn btn-sm btn-outline-primary"
-                  >View Project</a
-                >
-              </div>
-            </div>
-          </div>
-
+        <div id="gallery" class="row g-4 gallery-grid">
           <!-- Other -->
           <div class="col-md-6 col-lg-4 gallery-item" data-category="other">
             <div class="card border-0 shadow-sm h-100">
               <div class="card-img-top position-relative">
                 <img
-                  src="images/IMG-20250407-WA0450.jpg"
+                  src="images/showcase6.jpg"
                   class="img-fluid w-100"
                   alt="Fashion Design"
                 />
@@ -562,7 +366,7 @@
                   Other
                 </div>
                 <a
-                  href="images/IMG-20250407-WA0436.jpg"
+                  href="images/showcase6.jpg"
                   class="gallery-preview"
                   data-fslightbox="gallery"
                   data-caption="Eco-friendly fashion collection by fashion design students"
@@ -585,9 +389,9 @@
             </div>
           </div>
         </div>
-        <div class="text-center mt-5">
+        <!-- <div class="text-center mt-5">
           <a href="#" class="btn btn-primary">View More Projects</a>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -604,83 +408,59 @@
         </div>
         <div class="row g-4">
           <div class="col-md-4">
-            <div
-              class="card h-100 border-0 bg-white bg-opacity-10 shadow-lg talent-card"
-            >
-              <div class="card-img-container p-4" style="justify-content: center; align-items: center; display: flex;">
-                <img
-                  src="images/IMG-20250407-WA0438.jpg"
-                  class="card-img-top rounded-circle mx-auto"
-                  style="width: 150px; height: 150px; object-fit: cover"
-                  alt="Featured Talent"
-                />
-              </div>
+            <div class="card h-100 border-0 bg-transparent">
+              <img
+                src="images/talent1.jpg"
+                class="card-img-top rounded-circle mx-auto"
+                style="width: 150px; height: 150px; object-fit: cover"
+                alt="Featured Talent"
+              />
               <div class="card-body text-center">
                 <h4 class="card-title">Sarah M.</h4>
-                <div class="talent-category mb-3">
-                  <span class="badge bg-light text-primary">Music</span>
-                </div>
+                <p class="text-muted">Music</p>
                 <p class="card-text">
                   Won Kenya's Got Talent after being discovered at KNP Talent
                   Day. Now a recording artist with two singles.
                 </p>
-                <a href="#" class="btn btn-light btn-sm mt-3"
-                  >View Profile <i class="fas fa-arrow-right ms-2"></i
-                ></a>
+                <a href="#" class="btn btn-light">View Profile</a>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div
-              class="card h-100 border-0 bg-white bg-opacity-10 shadow-lg talent-card"
-            >
-              <div class="card-img-container p-4" style="justify-content: center; align-items: center; display: flex;">
-                <img
-                  src="images/IMG-20250407-WA0439.jpg"
-                  class="card-img-top rounded-circle mx-auto"
-                  style="width: 150px; height: 150px; object-fit: cover"
-                  alt="Featured Talent"
-                />
-              </div>
+            <div class="card h-100 border-0 bg-transparent">
+              <img
+                src="images/talent2.jpg"
+                class="card-img-top rounded-circle mx-auto"
+                style="width: 150px; height: 150px; object-fit: cover"
+                alt="Featured Talent"
+              />
               <div class="card-body text-center">
                 <h4 class="card-title">James K.</h4>
-                <div class="talent-category mb-3">
-                  <span class="badge bg-light text-primary">Technology</span>
-                </div>
+                <p class="text-muted">Technology</p>
                 <p class="card-text">
                   Developed inventory management app that's now used by 50+
                   businesses. Runs his own startup.
                 </p>
-                <a href="#" class="btn btn-light btn-sm mt-3"
-                  >View Profile <i class="fas fa-arrow-right ms-2"></i
-                ></a>
+                <a href="#" class="btn btn-light">View Profile</a>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div
-              class="card h-100 border-0 bg-white bg-opacity-10 shadow-lg talent-card"
-            >
-              <div class="card-img-container p-4" style="justify-content: center; align-items: center; display: flex;">
-                <img
-                  src="images/IMG-20250407-WA0457.jpg"
-                  class="card-img-top rounded-circle mx-auto"
-                  style="width: 150px; height: 150px; object-fit: cover"
-                  alt="Featured Talent"
-                />
-              </div>
+            <div class="card h-100 border-0 bg-transparent">
+              <img
+                src="images/talent3.jpg"
+                class="card-img-top rounded-circle mx-auto"
+                style="width: 150px; height: 150px; object-fit: cover"
+                alt="Featured Talent"
+              />
               <div class="card-body text-center">
                 <h4 class="card-title">Grace W.</h4>
-                <div class="talent-category mb-3">
-                  <span class="badge bg-light text-primary">Visual Arts</span>
-                </div>
+                <p class="text-muted">Visual Arts</p>
                 <p class="card-text">
                   Earned full scholarship to Italy for her paintings. Currently
                   studying fine art in Florence.
                 </p>
-                <a href="#" class="btn btn-light btn-sm mt-3"
-                  >View Profile <i class="fas fa-arrow-right ms-2"></i
-                ></a>
+                <a href="#" class="btn btn-light">View Profile</a>
               </div>
             </div>
           </div>
@@ -688,48 +468,8 @@
       </div>
     </section>
 
-    <style>
-      .talent-card {
-        transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .talent-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
-        background-color: rgba(255, 255, 255, 0.15) !important;
-      }
-
-      .card-img-container {
-        background: linear-gradient(
-          135deg,
-          rgba(13, 110, 253, 0.3) 0%,
-          rgba(255, 255, 255, 0.1) 100%
-        );
-        border-radius: 0;
-        margin: -1px -1px 0 -1px;
-      }
-
-      .talent-category .badge {
-        font-size: 0.8rem;
-        padding: 0.35rem 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-      }
-
-      .btn-light {
-        transition: all 0.3s ease;
-      }
-
-      .btn-light:hover {
-        background-color: #f8f9fa;
-        transform: translateY(-2px);
-      }
-    </style>
-
     <!-- Testimonials -->
-    <section class="py-5 bg-light">
+    <section class="py-5">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
@@ -747,87 +487,61 @@
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
-                <!-- Testimonial Item 1 -->
                 <div class="carousel-item active">
-                  <div class="testimonial-card text-center p-4 p-lg-5 mx-auto">
-                    <div class="testimonial-img-container mb-4 p-4">
-                      <img
-                        src="images/IMG-20250407-WA0444.jpg"
-                        class="rounded-circle"
-                        style="width: 150px; height: 150px; object-fit: cover"
-                        alt="Testimonial"
-                      />
-                      <div class="quote-icon">
-                        <i class="fas fa-quote-left"></i>
-                      </div>
-                    </div>
-                    <blockquote class="blockquote mb-4">
-                      <p class="fs-5">
+                  <div class="testimonial-item text-center p-4">
+                    <img
+                      src="images/testimonial4.jpg"
+                      class="rounded-circle mb-3"
+                      width="100"
+                      alt="Testimonial"
+                    />
+                    <blockquote class="blockquote">
+                      <p>
                         "IGAT Club gave me the confidence to pursue music
                         professionally. The workshops and performance
                         opportunities were invaluable."
                       </p>
                     </blockquote>
-                    <div class="testimonial-author">
-                      <h5 class="mb-1">Michael N.</h5>
-                      <p class="text-muted">Music Talent, Class of 2022</p>
-                    </div>
+                    <h5>Michael N.</h5>
+                    <p>Music Talent, Class of 2022</p>
                   </div>
                 </div>
-
-                <!-- Testimonial Item 2 -->
                 <div class="carousel-item">
-                  <div class="testimonial-card text-center p-4 p-lg-5 mx-auto">
-                    <div class="testimonial-img-container mb-4">
-                      <img
-                        src="images/IMG-20250407-WA0444.jpg"
-                        class="rounded-circle"
-                        style="width: 150px; height: 150px; object-fit: cover"
-                        alt="Testimonial"
-                      />
-                      <div class="quote-icon">
-                        <i class="fas fa-quote-left"></i>
-                      </div>
-                    </div>
-                    <blockquote class="blockquote mb-4">
-                      <p class="fs-5">
+                  <div class="testimonial-item text-center p-4">
+                    <img
+                      src="images/testimonial5.jpg"
+                      class="rounded-circle mb-3"
+                      width="100"
+                      alt="Testimonial"
+                    />
+                    <blockquote class="blockquote">
+                      <p>
                         "Through IGAT's tech challenges, I discovered my passion
                         for coding and now have a promising career in software
                         development."
                       </p>
                     </blockquote>
-                    <div class="testimonial-author">
-                      <h5 class="mb-1">Linda O.</h5>
-                      <p class="text-muted">Tech Innovation, Class of 2021</p>
-                    </div>
+                    <h5>Linda O.</h5>
+                    <p>Tech Innovation, Class of 2021</p>
                   </div>
                 </div>
-
-                <!-- Testimonial Item 3 -->
                 <div class="carousel-item">
-                  <div class="testimonial-card text-center p-4 p-lg-5 mx-auto">
-                    <div class="testimonial-img-container mb-4">
-                      <img
-                        src="images/IMG-20250407-WA0444.jpg"
-                        class="rounded-circle"
-                        style="width: 150px; height: 150px; object-fit: cover"
-                        alt="Testimonial"
-                      />
-                      <div class="quote-icon">
-                        <i class="fas fa-quote-left"></i>
-                      </div>
-                    </div>
-                    <blockquote class="blockquote mb-4">
-                      <p class="fs-5">
+                  <div class="testimonial-item text-center p-4">
+                    <img
+                      src="images/testimonial6.jpg"
+                      class="rounded-circle mb-3"
+                      width="100"
+                      alt="Testimonial"
+                    />
+                    <blockquote class="blockquote">
+                      <p>
                         "The art exhibition organized by IGAT led to my first
                         commission. I now run a successful graphic design
                         business."
                       </p>
                     </blockquote>
-                    <div class="testimonial-author">
-                      <h5 class="mb-1">David M.</h5>
-                      <p class="text-muted">Visual Arts, Class of 2020</p>
-                    </div>
+                    <h5>David M.</h5>
+                    <p>Visual Arts, Class of 2020</p>
                   </div>
                 </div>
               </div>
@@ -838,10 +552,9 @@
                 data-bs-slide="prev"
               >
                 <span
-                  class="carousel-control-prev-icon bg-primary rounded-circle p-3"
+                  class="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Previous</span>
               </button>
               <button
                 class="carousel-control-next"
@@ -850,74 +563,15 @@
                 data-bs-slide="next"
               >
                 <span
-                  class="carousel-control-next-icon bg-primary rounded-circle p-3"
+                  class="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="visually-hidden">Next</span>
               </button>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <style>
-      /* Testimonial Card Styling */
-      .testimonial-card {
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        max-width: 800px;
-        transition: transform 0.3s ease;
-      }
-
-      .testimonial-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .testimonial-img-container {
-        position: relative;
-        display: inline-block;
-      }
-
-      .quote-icon {
-        position: absolute;
-        top: -15px;
-        right: -15px;
-        background: #0d6efd;
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
-      }
-
-      /* Carousel Controls */
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: auto;
-      }
-
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        background-size: 1rem;
-      }
-
-      /* Responsive Adjustments */
-      @media (max-width: 768px) {
-        .testimonial-card {
-          padding: 2rem 1.5rem !important;
-        }
-
-        .testimonial-img-container img {
-          width: 100px !important;
-        }
-      }
-    </style>
 
     <!-- Call to Action -->
     <section class="py-5 bg-light">
@@ -1083,6 +737,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script src="js/gallery.js"></script>
     <script>
       // Gallery filtering
       document.querySelectorAll(".filter-buttons button").forEach((button) => {
@@ -1109,22 +764,5 @@
         });
       });
     </script>
-    <script>
-      const carousel = new bootstrap.Carousel("#myCarousel");
-    </script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 2000,
-        once: false,
-        disable: function() {
-    return window.innerWidth <=768; // Disable below 768px
-  }
-      });
-    </script>
-    <script
-      src="https://kit.fontawesome.com/7b3b6f1d2f.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

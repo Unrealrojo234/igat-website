@@ -217,7 +217,7 @@
         </a>
         <a href="#" class="brand-name">IGAT Club</a>
       </div>
-    
+
       <button
         class="menu-toggle"
         aria-label="Menu"
@@ -226,10 +226,10 @@
       >
         ☰
       </button>
-    
+
       <!-- Moved overlay to be sibling of nav-container -->
       <div class="nav-overlay" aria-hidden="true"></div>
-    
+
       <div class="nav-container">
         <ul class="nav-list" id="nav-list" aria-hidden="true">
           <li class="nav-item active"><a href="index.html">Home</a></li>
@@ -344,79 +344,12 @@
     </section>
 
     <!-- Our Team -->
-    <section class="content-section">
+    <section class="py-5">
       <div class="container">
-        <h2 class="text-center section-title">Our Team</h2>
-        <div class="row g-4">
-          <div class="col-md-4" data-aos="slide-right">
-            <div class="custom-card card">
-              <img
-                src="images/peris.jpg"
-                class="card-img-top"
-                alt="Mrs. Peris Bosibori Ongori"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Mrs. Peris Bosibori Ongori</h5>
-                <p class="text-muted">Founder & Patron</p>
-                <p class="card-text">
-                  The visionary behind IGAT Club with a passion for talent
-                  development among youth.
-                </p>
-                <div class="d-flex justify-content-center">
-                  <a
-                    href="mailto:bosiboriperis@gmail.com"
-                    class="btn btn-sm btn-outline-primary me-2"
-                  >
-                    <i class="fas fa-envelope"></i>
-                  </a>
-                  <a
-                    href="tel:+254722995763"
-                    class="btn btn-sm btn-outline-primary"
-                  >
-                    <i class="fas fa-phone"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="slide-up">
-            <div class="custom-card card">
-              <img
-                src="images/IMG-20250407-WA0452.jpg"
-                class="card-img-top"
-                alt="Club Chairperson"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">John Mwangi</h5>
-                <p class="text-muted">Club Chairperson</p>
-                <p class="card-text">
-                  Current student leader overseeing club activities and student
-                  engagement.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="slide-left">
-            <div class="custom-card card">
-              <img
-                src="images/IMG-20250407-WA0455.jpg"
-                class="card-img-top"
-                alt="Club Secretary"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Grace Atieno</h5>
-                <p class="text-muted">Club Secretary</p>
-                <p class="card-text">
-                  Manages club communications and documentation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center mt-5">
-          <a href="contact.html" class="btn btn-primary btn-lg"
-            >Contact Our Team</a
-          >
+        <h2 class="text-center mb-5">Our Team</h2>
+        <div id="team" class="row g-4"></div>
+        <div class="text-center mt-4">
+          <a href="contact.html" class="btn btn-primary">Contact Our Team</a>
         </div>
       </div>
     </section>
@@ -562,14 +495,16 @@
       AOS.init({
         duration: 2000,
         once: false,
-        disable: function() {
-    return window.innerWidth <=768; // Disable below 768px
-  }
+        disable: function () {
+          return window.innerWidth <= 768; // Disable below 768px
+        },
       });
     </script>
     <script
       src="https://kit.fontawesome.com/7b3b6f1d2f.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="js/team.js"></script>
   </body>
 </html>
