@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brand-logo {
-  height: 40px;
+  height: 55px;
   width: auto;
   margin-right: 10px;
   color: white;
@@ -411,7 +411,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   @media (max-width: 576px) {
     .brand-logo {
-      height: 32px;
+      height: 41px;
     }
   }
   
