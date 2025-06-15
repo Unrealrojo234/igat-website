@@ -84,15 +84,19 @@ h1, h2, h3, h4, h5, h6 {
 .brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 12px;
 }
 
 .brand-logo {
-  height: 55px;
-  width: auto;
-  margin-right: 10px;
-  color: white;
-  transition: all 0.3s ease;
+  width: 150px;        /* Adjust based on your preference */
+  height: auto;        /* Maintain aspect ratio */
+  max-height: 70px;    /* Prevent excessive height */
+  object-fit: contain;  /* Avoid distortion */
+  transition: all 0.3s ease; /* Smooth hover effect (optional) */
+}
+/* Optional: Hover effect for interactivity */
+.brand-logo:hover {
+  transform: scale(1.05); 
 }
 
 .brand-name {
@@ -336,7 +340,8 @@ h1, h2, h3, h4, h5, h6 {
       transition: right 0.3s ease;
     }
     .brand-logo {
-        height: 36px;
+        width: 120px;         /* Slightly smaller for tablets */
+        max-height: 60px;
       }
     
     .nav-list {
@@ -409,10 +414,14 @@ h1, h2, h3, h4, h5, h6 {
     transition: none !important;
   }
   }
-  @media (max-width: 576px) {
+  @media (max-width: 480px) {
     .brand-logo {
-      height: 41px;
-    }
+    width: 100px;         /* Compact for mobile */
+    max-height: 50px;
+  }
+  .brand-name {
+    font-size: 0.9rem;   /* Optional: Adjust text size if needed */
+  }
   }
   
 
