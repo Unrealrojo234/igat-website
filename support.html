@@ -19,6 +19,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Sweet Alert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/style.css" />
     <style>
@@ -160,7 +164,7 @@
           </div>
         </div>
 
-         <div class="row justify-content-center">
+        <div class="row justify-content-center">
           <!-- Registration Fee -->
           <div class="col-md-5 mb-4">
             <div class="card payment-option-card h-100">
@@ -172,20 +176,30 @@
                   <i class="fas fa-id-card"></i>
                 </div>
                 <h3 class="card-title">$10</h3>
-                <p class="card-text">One-time registration fee for new members</p>
-                <p class="text-muted">Includes access to all club activities and resources</p>
+                <p class="card-text">
+                  One-time registration fee for new members
+                </p>
+                <p class="text-muted">
+                  Includes access to all club activities and resources
+                </p>
               </div>
               <div class="card-footer bg-transparent text-center">
-                <button class="btn btn-payment w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-type="registration" data-amount="10">
+                <button
+                  class="btn btn-payment w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#paymentModal"
+                  data-type="registration"
+                  data-amount="10"
+                >
                   Pay Registration Fee
                 </button>
               </div>
             </div>
           </div>
-          
+
           <!-- Spacer for larger screens -->
           <div class="col-md-1 d-none d-md-block"></div>
-          
+
           <!-- Membership Fee -->
           <div class="col-md-5 mb-4">
             <div class="card payment-option-card h-100">
@@ -197,11 +211,21 @@
                   <i class="fas fa-calendar-alt"></i>
                 </div>
                 <h3 class="card-title">$5</h3>
-                <p class="card-text">Annual membership fee for existing members</p>
-                <p class="text-muted">Maintain your access to club benefits and events</p>
+                <p class="card-text">
+                  Annual membership fee for existing members
+                </p>
+                <p class="text-muted">
+                  Maintain your access to club benefits and events
+                </p>
               </div>
               <div class="card-footer bg-transparent text-center">
-                <button class="btn btn-payment w-100" data-bs-toggle="modal" data-bs-target="#paymentModal" data-type="membership" data-amount="5">
+                <button
+                  class="btn btn-payment w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#paymentModal"
+                  data-type="membership"
+                  data-amount="5"
+                >
                   Pay Membership Fee
                 </button>
               </div>
@@ -230,50 +254,105 @@
     </section>
 
     <!-- Payment Modal -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="paymentModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="paymentModalLabel">Payment Form</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-6">
                   <div class="mb-3">
-                    <label for="paymentType" class="form-label">Payment Type</label>
-                    <input type="text" class="form-control" id="paymentType" readonly>
+                    <label for="paymentType" class="form-label"
+                      >Payment Type</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="paymentType"
+                      readonly
+                    />
                   </div>
                   <div class="mb-3">
                     <label for="amount" class="form-label">Amount (USD)</label>
-                    <input type="number" class="form-control" id="amount" min="1" required>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="amount"
+                      min="1"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
                     <label for="fullName" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="fullName" required>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fullName"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
                     <label for="phone" class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control" id="phone" required>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
-                    <label for="mpesaRef" class="form-label">M-Pesa Reference Number</label>
-                    <input type="text" class="form-control" id="mpesaRef" required>
+                    <label for="mpesaRef" class="form-label"
+                      >M-Pesa Reference Number</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mpesaRef"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="account-details h-100">
                     <h5 class="text-primary">Account Details</h5>
                     <p class="mb-2"><strong>Bank:</strong> NCBA Bank</p>
-                    <p class="mb-2"><strong>Account Name:</strong> I GOT A TALENT SELF HELP GROUP</p>
-                    <p class="mb-2"><strong>Account Number:</strong> 1004244986</p>
-                    <hr>
+                    <p class="mb-2">
+                      <strong>Account Name:</strong> I GOT A TALENT SELF HELP
+                      GROUP
+                    </p>
+                    <p class="mb-2">
+                      <strong>Account Number:</strong> 1004244986
+                    </p>
+                    <hr />
                     <p class="mb-2"><strong>Important:</strong></p>
-                    <p class="mb-2">After making your payment via M-Pesa, please enter the transaction reference number in the form.</p>
+                    <p class="mb-2">
+                      After making your payment via M-Pesa, please enter the
+                      transaction reference number in the form.
+                    </p>
                     <div class="mb-3 mt-3">
-                      <label for="paymentProof" class="form-label">Upload Proof of Payment (Optional)</label>
-                      <input class="form-control" type="file" id="paymentProof">
+                      <label for="paymentProof" class="form-label"
+                        >Upload Proof of Payment (Optional)</label
+                      >
+                      <input
+                        class="form-control"
+                        type="file"
+                        id="paymentProof"
+                      />
                     </div>
                   </div>
                 </div>
@@ -281,8 +360,16 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary" id="submitPayment">Submit Payment Details</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="submitPayment">
+              Submit Payment Details
+            </button>
           </div>
         </div>
       </div>
@@ -419,64 +506,127 @@
     <script src="/script.js"></script>
     <script>
       // Handle modal show event
-      var paymentModal = document.getElementById('paymentModal');
-      paymentModal.addEventListener('show.bs.modal', function (event) {
-          var button = event.relatedTarget;
-          var paymentType = button.getAttribute('data-type');
-          var amount = button.getAttribute('data-amount');
-          
-          var modalTitle = paymentModal.querySelector('.modal-title');
-          var modalPaymentType = paymentModal.querySelector('#paymentType');
-          var modalAmount = paymentModal.querySelector('#amount');
-          
-          modalTitle.textContent = paymentType.charAt(0).toUpperCase() + paymentType.slice(1) + ' Payment';
-          modalPaymentType.value = paymentType;
-          
-          if (amount) {
-              modalAmount.value = amount;
-              modalAmount.readOnly = true;
-          } else {
-              modalAmount.value = '';
-              modalAmount.readOnly = false;
-          }
+      var paymentModal = document.getElementById("paymentModal");
+      paymentModal.addEventListener("show.bs.modal", function (event) {
+        var button = event.relatedTarget;
+        var paymentType = button.getAttribute("data-type");
+        var amount = button.getAttribute("data-amount");
+
+        var modalTitle = paymentModal.querySelector(".modal-title");
+        var modalPaymentType = paymentModal.querySelector("#paymentType");
+        var modalAmount = paymentModal.querySelector("#amount");
+
+        modalTitle.textContent =
+          paymentType.charAt(0).toUpperCase() +
+          paymentType.slice(1) +
+          " Payment";
+        modalPaymentType.value = paymentType;
+
+        if (amount) {
+          modalAmount.value = amount;
+          modalAmount.readOnly = true;
+        } else {
+          modalAmount.value = "";
+          modalAmount.readOnly = false;
+        }
       });
-      
+
       // Handle form submission
-      document.getElementById('submitPayment').addEventListener('click', function() {
+      document
+        .getElementById("submitPayment")
+        .addEventListener("click", function () {
           // Basic validation
-          const amount = document.getElementById('amount').value;
-          const fullName = document.getElementById('fullName').value;
-          const phone = document.getElementById('phone').value;
-          const mpesaRef = document.getElementById('mpesaRef').value;
-          
+          const amount = document.getElementById("amount").value;
+          const fullName = document.getElementById("fullName").value;
+          const phone = document.getElementById("phone").value;
+          const mpesaRef = document.getElementById("mpesaRef").value;
+
           if (!amount || amount < 1) {
-              alert('Please enter a valid amount');
-              return;
+            alert("Please enter a valid amount");
+            return;
           }
-          
+
           if (!fullName) {
-              alert('Please enter your full name');
-              return;
+            alert("Please enter your full name");
+            return;
           }
-          
+
           if (!phone) {
-              alert('Please enter your phone number');
-              return;
+            alert("Please enter your phone number");
+            return;
           }
-          
+
           if (!mpesaRef) {
-              alert('Please enter your M-Pesa reference number');
-              return;
+            alert("Please enter your M-Pesa reference number");
+            return;
           }
-          
+
+          let data = {
+            name: fullName,
+            phone: phone,
+            mpesa_ref: mpesaRef,
+            approved: false,
+          };
+
+          function sweetAlert(icon, message) {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              },
+            });
+            Toast.fire({
+              icon: icon,
+              title: message,
+            });
+          }
+
+          // console.table(data);
+
+          async function POST(data) {
+            try {
+              const request = await fetch(
+                amount == 10
+                  ? `https://igat-admin.vercel.app/api/registration`
+                  : `https://igat-admin.vercel.app/api/renewal`,
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                  },
+                  body: JSON.stringify(data),
+                }
+              );
+
+              const response = await request.json();
+
+              if (response) {
+                sweetAlert(
+                  "success",
+                  amount == 10 ? "Registration Sent" : "Renewal Sent "
+                );
+              }
+            } catch (error) {
+              sweetAlert("error", error.message);
+            }
+          }
+
+          POST(data);
+
           // Here you would normally send the data to your server
           // For now, we'll just close the modal
           var modal = bootstrap.Modal.getInstance(paymentModal);
           modal.hide();
-          
+
           // You might want to show a success message elsewhere on the page
           // instead of using an alert
-      });
+        });
     </script>
   </body>
 </html>
